@@ -12,30 +12,38 @@ from anchor.reasoning_engine import build_reasoning_context, reason, should_trig
 from marlin.main import default_mission_config
 
 
-def sample_event() -> dict:
+def sample_event(node_id: str, event_id: str, timestamp: str) -> dict:
     return {
         "message_type": "event",
-        "event_id": "evt-001",
-        "node_id": "marlin-01",
+        "event_id": event_id,
+        "node_id": node_id,
         "type": "entered_geofence",
         "severity": "info",
-        "timestamp": "2026-05-01T12:00:00Z",
+        "timestamp": timestamp,
         "details": {"geofence_id": "target-zone-1"},
     }
 
 
-def sample_snapshot() -> dict:
+def sample_snapshot(
+    node_id: str,
+    lat: float,
+    lon: float,
+    battery_percent: int,
+    mode: str,
+    timestamp: str,
+    scan_timestamp: str,
+) -> dict:
     return {
         "message_type": "snapshot",
-        "node_id": "marlin-01",
-        "timestamp": "2026-05-01T12:00:30Z",
-        "mode": "active",
-        "gps": {"lat": 36.8501, "lon": -76.2859},
-        "battery": {"percent": 82},
+        "node_id": node_id,
+        "timestamp": timestamp,
+        "mode": mode,
+        "gps": {"lat": lat, "lon": lon},
+        "battery": {"percent": battery_percent},
         "environment": {"temperature_c": 21.4, "humidity_pct": 68.2},
         "wifi_scan_meta": {
             "scan_performed": True,
-            "scan_timestamp": "2026-05-01T12:00:20Z",
+            "scan_timestamp": scan_timestamp,
         },
         "wifi_scan": [
             {
@@ -82,6 +90,71 @@ def process_message(db: dict, message: dict) -> dict:
     }
 
 
+def build_demo_missions() -> list[dict]:
+    base = default_mission_config().to_dict()
+    north = {
+        **base,
+        "mission_id": "mission-002",
+        "node_id": "marlin-02",
+        "active_geofence": {
+            **base["active_geofence"],
+            "center_lat": 38.9850,
+            "center_lon": -76.4367,
+        },
+    }
+    south = {
+        **base,
+        "mission_id": "mission-003",
+        "node_id": "marlin-03",
+        "active_geofence": {
+            **base["active_geofence"],
+            "center_lat": 38.8865,
+            "center_lon": -76.4367,
+        },
+    }
+    return [base, north, south]
+
+
+def build_demo_snapshots() -> list[dict]:
+    return [
+        sample_snapshot(
+            node_id="marlin-01",
+            lat=38.9445,
+            lon=-76.4367,
+            battery_percent=82,
+            mode="active",
+            timestamp="2026-05-01T12:00:30Z",
+            scan_timestamp="2026-05-01T12:00:20Z",
+        ),
+        sample_snapshot(
+            node_id="marlin-02",
+            lat=38.9850,
+            lon=-76.4367,
+            battery_percent=79,
+            mode="active",
+            timestamp="2026-05-01T12:01:00Z",
+            scan_timestamp="2026-05-01T12:00:48Z",
+        ),
+        sample_snapshot(
+            node_id="marlin-03",
+            lat=38.8865,
+            lon=-76.4367,
+            battery_percent=76,
+            mode="passive",
+            timestamp="2026-05-01T12:01:30Z",
+            scan_timestamp="2026-05-01T12:01:18Z",
+        ),
+    ]
+
+
+def build_demo_events() -> list[dict]:
+    return [
+        sample_event("marlin-01", "evt-001", "2026-05-01T12:00:00Z"),
+        sample_event("marlin-02", "evt-002", "2026-05-01T12:00:40Z"),
+        sample_event("marlin-03", "evt-003", "2026-05-01T12:01:10Z"),
+    ]
+
+
 def seed_demo_data(reset: bool = False) -> dict:
     if reset:
         save_database(
@@ -92,23 +165,39 @@ def seed_demo_data(reset: bool = False) -> dict:
                 "messages": [],
                 "reasoning_runs": [],
                 "commands": [],
+                "chat_history": [],
             },
         )
     db = load_database(DATABASE_PATH)
-    mission = default_mission_config().to_dict()
-    db["missions"][mission["node_id"]] = mission
+    if not db["chat_history"]:
+        db["chat_history"] = [
+            {
+                "role": "anchor",
+                "text": "ANCHOR online. I can help define deployment status, geofence objectives, scan behavior, and reporting policy for each MARLIN.",
+            },
+            {
+                "role": "anchor",
+                "text": "Start by telling me whether the MARLINs are already deployed or about to be deployed.",
+            },
+        ]
+    for mission in build_demo_missions():
+        db["missions"][mission["node_id"]] = mission
     save_database(DATABASE_PATH, db)
-    snapshot_result = process_message(db, sample_snapshot())
-    event_result = process_message(db, sample_event())
+    for snapshot in build_demo_snapshots():
+        process_message(db, snapshot)
+    for event in build_demo_events():
+        process_message(db, event)
     return {
         "status": "seeded",
-        "snapshot_result": snapshot_result,
-        "event_result": event_result,
+        "nodes_seeded": 3,
     }
 
 
 def run_once() -> None:
-    result = process_message(load_database(DATABASE_PATH), sample_event())
+    result = process_message(
+        load_database(DATABASE_PATH),
+        sample_event("marlin-01", "evt-001", "2026-05-01T12:00:00Z"),
+    )
     print(f"Message receipt: {result['receipt']}")
     print(f"Current marker: {result['marker']}")
 

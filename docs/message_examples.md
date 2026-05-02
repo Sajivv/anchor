@@ -9,8 +9,8 @@
   "timestamp": "2026-05-01T12:00:00Z",
   "mode": "active",
   "gps": {
-    "lat": 36.8501,
-    "lon": -76.2859
+    "lat": 38.9445,
+    "lon": -76.4367
   },
   "battery": {
     "percent": 82
