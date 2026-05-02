@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.sqlite3
+*.db
+anchor_data/
+marlin_cache/
+node_modules/
+web/dist/
+web/build/

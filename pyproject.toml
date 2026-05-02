@@ -1,0 +1,8 @@
+[project]
+name = "anchor-marlin-prototype"
+version = "0.1.0"
+description = "Research prototype for ANCHOR and MARLIN"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+py-modules = []
