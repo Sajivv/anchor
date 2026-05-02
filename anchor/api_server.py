@@ -2,10 +2,17 @@ import json
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib import request
 from urllib.parse import parse_qs, urlparse
 
 from anchor.config import BASE_DIR, DATABASE_PATH
-from anchor.database import append_chat_message, load_database, save_database
+from anchor.database import (
+    append_chat_message,
+    attach_command_to_active_run,
+    load_database,
+    save_database,
+    start_scenario_run,
+)
 from anchor.ingest import process_message
 from anchor.command_center import make_command, send_command
 
@@ -101,6 +108,9 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             if parsed.path == "/api/system-mode":
                 self._handle_system_mode()
                 return
+            if parsed.path == "/api/inject-scenario":
+                self._handle_inject_scenario()
+                return
             self.send_error(HTTPStatus.NOT_FOUND, "Not found")
 
         def log_message(self, format: str, *args) -> None:
@@ -148,6 +158,7 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             command_id = f"manual-{len(db.get('commands', [])) + 1:03d}"
             command = make_command(command_id, node_id, command_type, params)
             db["commands"].append(command.to_dict())
+            attach_command_to_active_run(db, node_id, command.to_dict())
             save_database(DATABASE_PATH, db)
             delivery_result = send_command(command)
             db = load_database(DATABASE_PATH)
@@ -174,6 +185,36 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             db["system_mode"] = mode
             save_database(DATABASE_PATH, db)
             self._respond_json({"status": "updated", "system_mode": mode})
+
+        def _handle_inject_scenario(self) -> None:
+            content_length = int(self.headers.get("Content-Length", "0"))
+            raw_body = self.rfile.read(content_length) if content_length else b"{}"
+            payload = json.loads(raw_body.decode("utf-8"))
+            node_id = str(payload.get("node_id", "")).strip()
+            scenario = str(payload.get("scenario", "")).strip()
+            if not node_id or not scenario:
+                self.send_error(HTTPStatus.BAD_REQUEST, "Missing node_id or scenario")
+                return
+
+            db = load_database(DATABASE_PATH)
+            run = start_scenario_run(db, node_id, scenario)
+            save_database(DATABASE_PATH, db)
+
+            req = request.Request(
+                url="http://127.0.0.1:9001/api/scenario",
+                data=json.dumps(
+                    {
+                        "node_id": node_id,
+                        "scenario": scenario,
+                        "trigger_cycle": True,
+                    }
+                ).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            with request.urlopen(req, timeout=10) as response:
+                result = json.loads(response.read().decode("utf-8"))
+            self._respond_json({"status": "sent", "run": run, "result": result})
 
         def _respond_html(self, body: str) -> None:
             encoded = body.encode("utf-8")

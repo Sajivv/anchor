@@ -101,6 +101,10 @@
         gap: 18px;
       }
 
+      .full-width {
+        margin-top: 18px;
+      }
+
       .panel {
         background: color-mix(in srgb, var(--panel) 92%, white 8%);
         border: 1px solid var(--line);
@@ -230,6 +234,18 @@
       .marlin-controls button {
         padding: 7px 10px;
         font-size: 12px;
+      }
+
+      .scenario-controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .scenario-controls button {
+        padding: 7px 10px;
+        font-size: 12px;
+        border-style: dashed;
       }
 
       .pill {
@@ -459,6 +475,18 @@
           <div class="list" id="reasoning-list"></div>
         </div>
       </section>
+
+      <section class="full-width">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Scenario Runs</h2>
+              <p>Tracked experiment runs with captured events, snapshots, commands, and responses.</p>
+            </div>
+          </div>
+          <div class="list" id="runs-list"></div>
+        </div>
+      </section>
     </div>
 
     <script
@@ -471,6 +499,7 @@
       const fleetList = document.getElementById("fleet-list");
       const messagesList = document.getElementById("messages-list");
       const reasoningList = document.getElementById("reasoning-list");
+      const runsList = document.getElementById("runs-list");
       const chatLog = document.getElementById("chat-log");
       const chatInput = document.getElementById("chat-input");
       const chatSend = document.getElementById("chat-send");
@@ -560,6 +589,15 @@
               <button type="button" data-command="request_snapshot">Snapshot</button>
               <button type="button" data-command="run_wifi_scan">Wi-Fi Scan</button>
             </div>
+            <div class="scenario-controls">
+              <button type="button" data-scenario="geofence_entry">Geofence</button>
+              <button type="button" data-scenario="low_battery">Low Battery</button>
+              <button type="button" data-scenario="target_wifi_detection">Target Wi-Fi</button>
+              <button type="button" data-scenario="disconnect">Disconnect</button>
+              <button type="button" data-scenario="reconnect">Reconnect</button>
+              <button type="button" data-scenario="command_failure">Fail Next Cmd</button>
+              <button type="button" data-scenario="reset">Reset</button>
+            </div>
             <details class="debug">
               <summary>Debug JSON</summary>
               <pre>${JSON.stringify(entry, null, 2)}</pre>
@@ -572,6 +610,12 @@
             if (commandButton) {
               event.stopPropagation();
               dispatchCommand(card.dataset.nodeId, commandButton.dataset.command);
+              return;
+            }
+            const scenarioButton = event.target.closest("button[data-scenario]");
+            if (scenarioButton) {
+              event.stopPropagation();
+              injectScenario(card.dataset.nodeId, scenarioButton.dataset.scenario);
               return;
             }
             const details = event.target.closest("details");
@@ -642,6 +686,30 @@
         chatLog.scrollTop = chatLog.scrollHeight;
       }
 
+      function renderRuns(runs) {
+        if (!runs.length) {
+          runsList.innerHTML = '<div class="empty">No scenario runs yet.</div>';
+          return;
+        }
+        const recentRuns = [...runs].slice(-6).reverse();
+        runsList.innerHTML = recentRuns.map((run) => `
+          <div class="item">
+            <strong>${run.run_id}</strong><br>
+            <small>${run.node_id} • ${run.scenario} • ${run.system_mode} • ${run.status}</small>
+            <div class="marlin-meta">
+              <span class="pill">events: ${run.events.length}</span>
+              <span class="pill">snapshots: ${run.snapshots.length}</span>
+              <span class="pill">commands: ${run.commands.length}</span>
+              <span class="pill">responses: ${run.command_responses.length}</span>
+            </div>
+            <details class="debug">
+              <summary>Debug JSON</summary>
+              <pre>${JSON.stringify(run, null, 2)}</pre>
+            </details>
+          </div>
+        `).join("");
+      }
+
       async function fetchState() {
         const response = await fetch("/api/state");
         const payload = await response.json();
@@ -654,6 +722,7 @@
         renderFleet(db.fleet_state);
         renderMessages(db.messages);
         renderReasoning(db.reasoning_runs, db.commands);
+        renderRuns(db.scenario_runs || []);
         chatMessages = db.chat_history || [];
         renderChat();
       }
@@ -676,6 +745,20 @@
             node_id: nodeId,
             command_type: commandType,
             params
+          })
+        });
+        await fetchState();
+      }
+
+      async function injectScenario(nodeId, scenario) {
+        await fetch("/api/inject-scenario", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            node_id: nodeId,
+            scenario
           })
         });
         await fetchState();

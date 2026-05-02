@@ -5,6 +5,7 @@ __pycache__/
 *.db
 anchor_data/
 marlin_cache/
+runtime/
 node_modules/
 web/dist/
 web/build/

@@ -4,10 +4,14 @@ from marlin.local_store import load_json, save_json
 from marlin.config import MISSION_CONFIG_PATH, NODE_STATE_PATH
 from marlin.snapshot_builder import build_snapshot
 from marlin import gps_reader, battery_reader, temp_humidity_reader, wifi_scanner
+from marlin.scenario_state import consume_fail_next_command
 from marlin.wifi_task_runner import run_wifi_scan, start_wifi_monitor, stop_wifi_activity
 
 
 def execute_command(command: AnchorCommand) -> tuple[str, dict]:
+    if consume_fail_next_command():
+        raise RuntimeError("Scenario injected command failure")
+
     if command.type == "ping":
         return "Ping received", {"alive": True}
 

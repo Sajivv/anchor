@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 from urllib import error, request
 
+from marlin.scenario_state import load_state
+
 
 def queue_message(path: Path, message: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -23,6 +25,9 @@ def flush_queue(path: Path) -> list[dict]:
 
 
 def send_message(api_base: str, message: dict) -> dict:
+    state = load_state()
+    if state.get("disconnect"):
+        raise error.URLError("Scenario disconnect is active")
     body = json.dumps(message).encode("utf-8")
     req = request.Request(
         url=f"{api_base.rstrip('/')}/api/messages",

@@ -20,9 +20,19 @@ architecture stays easy to understand and iterate on.
 ## Run
 
 ```bash
-python3 -m marlin.main
-python3 -m anchor.main
-python3 -m anchor.main --seed-demo --serve
+python3 scripts/run_stack.py --reset
 ```
 
 Then open [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+Keep that command running while you test. Stop it with `Ctrl-C`.
+
+If you prefer background scripts instead, you can still use:
+
+```bash
+./scripts/reset_state.sh
+./scripts/start_stack.sh
+./scripts/stop_stack.sh
+```
+
+For the full local testing flow, see [docs/runbook.md](/Users/sajivgnanasekaran/Documents/New%20project/docs/runbook.md:1).
