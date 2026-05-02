@@ -24,3 +24,12 @@ def complete_command(
         message=message,
         result=result or {},
     )
+
+
+def fail_command(command_id: str, node_id: str, message: str) -> CommandResponse:
+    return CommandResponse(
+        command_id=command_id,
+        node_id=node_id,
+        status="failed",
+        message=message,
+    )

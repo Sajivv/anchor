@@ -71,6 +71,7 @@
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
+        align-items: center;
       }
 
       button {
@@ -220,6 +221,17 @@
         font-size: 13px;
       }
 
+      .marlin-controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .marlin-controls button {
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+
       .pill {
         display: inline-flex;
         align-items: center;
@@ -228,6 +240,23 @@
         padding: 5px 10px;
         background: rgba(255,255,255,0.66);
         font-size: 12px;
+      }
+
+      .mode-control {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: rgba(255,255,255,0.66);
+      }
+
+      .mode-control select {
+        border: 0;
+        background: transparent;
+        font: inherit;
+        color: var(--ink);
       }
 
       .item {
@@ -354,6 +383,13 @@
         <div class="actions">
           <button class="primary" id="seed-demo">Load Demo Data</button>
           <button id="refresh">Refresh State</button>
+          <label class="mode-control">
+            <span>Mode</span>
+            <select id="system-mode">
+              <option value="anchor_managed">anchor-managed</option>
+              <option value="baseline">baseline</option>
+            </select>
+          </label>
         </div>
       </section>
 
@@ -438,6 +474,7 @@
       const chatLog = document.getElementById("chat-log");
       const chatInput = document.getElementById("chat-input");
       const chatSend = document.getElementById("chat-send");
+      const systemModeSelect = document.getElementById("system-mode");
       const map = L.map("map", {
         zoomControl: true,
         scrollWheelZoom: true
@@ -518,6 +555,11 @@
               <span class="pill">Battery: ${(entry.battery || {}).percent ?? "n/a"}%</span>
               <span class="pill">Last event: ${entry.last_event_type ?? "none"}</span>
             </div>
+            <div class="marlin-controls">
+              <button type="button" data-command="ping">Ping</button>
+              <button type="button" data-command="request_snapshot">Snapshot</button>
+              <button type="button" data-command="run_wifi_scan">Wi-Fi Scan</button>
+            </div>
             <details class="debug">
               <summary>Debug JSON</summary>
               <pre>${JSON.stringify(entry, null, 2)}</pre>
@@ -526,6 +568,12 @@
         `).join("");
         fleetList.querySelectorAll(".marlin-card").forEach((card) => {
           card.addEventListener("click", (event) => {
+            const commandButton = event.target.closest("button[data-command]");
+            if (commandButton) {
+              event.stopPropagation();
+              dispatchCommand(card.dataset.nodeId, commandButton.dataset.command);
+              return;
+            }
             const details = event.target.closest("details");
             if (details) {
               return;
@@ -598,6 +646,7 @@
         const response = await fetch("/api/state");
         const payload = await response.json();
         const db = payload.database;
+        systemModeSelect.value = payload.system_mode || "anchor_managed";
         document.getElementById("node-count").textContent = Object.keys(db.fleet_state).length;
         document.getElementById("message-count").textContent = db.messages.length;
         document.getElementById("command-count").textContent = db.commands.length;
@@ -611,6 +660,35 @@
 
       async function seedDemo() {
         await fetch("/api/demo/seed?reset=1");
+        await fetchState();
+      }
+
+      async function dispatchCommand(nodeId, commandType) {
+        const params = commandType === "run_wifi_scan"
+          ? { duration_sec: 60, channels: [1, 6, 11] }
+          : {};
+        await fetch("/api/dispatch-command", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            node_id: nodeId,
+            command_type: commandType,
+            params
+          })
+        });
+        await fetchState();
+      }
+
+      async function updateSystemMode() {
+        await fetch("/api/system-mode", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ mode: systemModeSelect.value })
+        });
         await fetchState();
       }
 
@@ -639,6 +717,7 @@
 
       document.getElementById("refresh").addEventListener("click", fetchState);
       document.getElementById("seed-demo").addEventListener("click", seedDemo);
+      systemModeSelect.addEventListener("change", updateSystemMode);
       document.getElementById("chat-send").addEventListener("click", sendChat);
       chatInput.addEventListener("keydown", (event) => {
         if ((event.metaKey || event.ctrlKey) && event.key === "Enter") {

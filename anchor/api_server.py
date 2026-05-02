@@ -6,14 +6,11 @@ from urllib.parse import parse_qs, urlparse
 
 from anchor.config import BASE_DIR, DATABASE_PATH
 from anchor.database import append_chat_message, load_database, save_database
+from anchor.ingest import process_message
+from anchor.command_center import make_command, send_command
 
 
 WEB_INDEX_PATH = BASE_DIR / "web" / "index.html"
-
-
-def receive_message(message: dict) -> dict:
-    return {"status": "received", "message_type": message.get("message_type")}
-
 
 def _load_index_html() -> str:
     return WEB_INDEX_PATH.read_text(encoding="utf-8")
@@ -36,7 +33,7 @@ def _build_state_payload() -> dict:
                 "last_event_type": entry.get("last_event_type"),
             }
         )
-    return {"database": db, "markers": markers}
+    return {"database": db, "markers": markers, "system_mode": db.get("system_mode", "anchor_managed")}
 
 
 def _anchor_chat_reply(user_text: str, db: dict) -> str:
@@ -95,6 +92,15 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             if parsed.path == "/api/chat":
                 self._handle_chat()
                 return
+            if parsed.path == "/api/messages":
+                self._handle_message()
+                return
+            if parsed.path == "/api/dispatch-command":
+                self._handle_dispatch_command()
+                return
+            if parsed.path == "/api/system-mode":
+                self._handle_system_mode()
+                return
             self.send_error(HTTPStatus.NOT_FOUND, "Not found")
 
         def log_message(self, format: str, *args) -> None:
@@ -115,6 +121,59 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             append_chat_message(db, "anchor", reply)
             save_database(DATABASE_PATH, db)
             self._respond_json({"reply": reply, "chat_history": db["chat_history"]})
+
+        def _handle_message(self) -> None:
+            content_length = int(self.headers.get("Content-Length", "0"))
+            raw_body = self.rfile.read(content_length) if content_length else b"{}"
+            payload = json.loads(raw_body.decode("utf-8"))
+            message_type = payload.get("message_type")
+            if message_type not in {"snapshot", "event", "command_response"}:
+                self.send_error(HTTPStatus.BAD_REQUEST, "Unsupported message_type")
+                return
+            result = process_message(payload)
+            self._respond_json(result)
+
+        def _handle_dispatch_command(self) -> None:
+            content_length = int(self.headers.get("Content-Length", "0"))
+            raw_body = self.rfile.read(content_length) if content_length else b"{}"
+            payload = json.loads(raw_body.decode("utf-8"))
+            node_id = str(payload.get("node_id", "")).strip()
+            command_type = str(payload.get("command_type", "")).strip()
+            params = payload.get("params", {})
+            if not node_id or not command_type:
+                self.send_error(HTTPStatus.BAD_REQUEST, "Missing node_id or command_type")
+                return
+
+            db = load_database(DATABASE_PATH)
+            command_id = f"manual-{len(db.get('commands', [])) + 1:03d}"
+            command = make_command(command_id, node_id, command_type, params)
+            db["commands"].append(command.to_dict())
+            save_database(DATABASE_PATH, db)
+            delivery_result = send_command(command)
+            db = load_database(DATABASE_PATH)
+            if db["commands"]:
+                db["commands"][-1]["delivery_result"] = delivery_result
+                save_database(DATABASE_PATH, db)
+            self._respond_json(
+                {
+                    "status": "sent",
+                    "command": command.to_dict(),
+                    "delivery_result": delivery_result,
+                }
+            )
+
+        def _handle_system_mode(self) -> None:
+            content_length = int(self.headers.get("Content-Length", "0"))
+            raw_body = self.rfile.read(content_length) if content_length else b"{}"
+            payload = json.loads(raw_body.decode("utf-8"))
+            mode = str(payload.get("mode", "")).strip()
+            if mode not in {"baseline", "anchor_managed"}:
+                self.send_error(HTTPStatus.BAD_REQUEST, "Unsupported mode")
+                return
+            db = load_database(DATABASE_PATH)
+            db["system_mode"] = mode
+            save_database(DATABASE_PATH, db)
+            self._respond_json({"status": "updated", "system_mode": mode})
 
         def _respond_html(self, body: str) -> None:
             encoded = body.encode("utf-8")

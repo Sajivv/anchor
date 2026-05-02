@@ -1,14 +1,9 @@
 import argparse
 
-from anchor.api_server import create_server, receive_message
-from anchor.command_center import make_command, record_command
+from anchor.api_server import create_server
 from anchor.config import DATABASE_PATH
-from anchor.database import append_message, load_database, save_database
-from anchor.fleet_manager import update_fleet_state
-from anchor.map_tracker import build_map_marker
-from anchor.mission_manager import get_mission_config
-from anchor.policy_guard import evaluate_action
-from anchor.reasoning_engine import build_reasoning_context, reason, should_trigger_reasoning
+from anchor.database import load_database, save_database
+from anchor.ingest import process_message
 from marlin.main import default_mission_config
 
 
@@ -54,41 +49,6 @@ def sample_snapshot(
             }
         ],
     }
-
-
-def process_message(db: dict, message: dict) -> dict:
-    db = load_database(DATABASE_PATH)
-    receipt = receive_message(message)
-    append_message(db, message)
-    update_fleet_state(db, message)
-
-    if should_trigger_reasoning(message):
-        fleet_entry = db["fleet_state"].get(message["node_id"], {})
-        mission_config = get_mission_config(db, message["node_id"])
-        context = build_reasoning_context(message, fleet_entry, mission_config)
-        reasoning_result = reason(context)
-        db["reasoning_runs"].append(reasoning_result)
-
-        for index, action in enumerate(reasoning_result["recommended_actions"], start=1):
-            approved, decision = evaluate_action(action, reasoning_result["confidence"])
-            if approved:
-                command = make_command(
-                    command_id=f"cmd-{index:03d}",
-                    node_id=message["node_id"],
-                    command_type=action["type"],
-                    params=action.get("params", {}),
-                )
-                record_command(db, command)
-                print(f"Approved command: {command.to_dict()}")
-            else:
-                print(f"Rejected action: {decision}")
-
-    save_database(DATABASE_PATH, db)
-    return {
-        "receipt": receipt,
-        "marker": build_map_marker(db["fleet_state"].get(message["node_id"], {})),
-    }
-
 
 def build_demo_missions() -> list[dict]:
     base = default_mission_config().to_dict()
@@ -166,6 +126,7 @@ def seed_demo_data(reset: bool = False) -> dict:
                 "reasoning_runs": [],
                 "commands": [],
                 "chat_history": [],
+                "system_mode": "anchor_managed",
             },
         )
     db = load_database(DATABASE_PATH)
@@ -184,9 +145,9 @@ def seed_demo_data(reset: bool = False) -> dict:
         db["missions"][mission["node_id"]] = mission
     save_database(DATABASE_PATH, db)
     for snapshot in build_demo_snapshots():
-        process_message(db, snapshot)
+        process_message(snapshot)
     for event in build_demo_events():
-        process_message(db, event)
+        process_message(event)
     return {
         "status": "seeded",
         "nodes_seeded": 3,
@@ -194,11 +155,8 @@ def seed_demo_data(reset: bool = False) -> dict:
 
 
 def run_once() -> None:
-    result = process_message(
-        load_database(DATABASE_PATH),
-        sample_event("marlin-01", "evt-001", "2026-05-01T12:00:00Z"),
-    )
-    print(f"Message receipt: {result['receipt']}")
+    result = process_message(sample_event("marlin-01", "evt-001", "2026-05-01T12:00:00Z"))
+    print(f"Message receipt: {result['status']}")
     print(f"Current marker: {result['marker']}")
 
 

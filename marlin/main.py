@@ -1,11 +1,21 @@
+import argparse
+
 from shared.mission_config import Geofence, MissionConfig, ReportingPolicy, SleepRules, WifiScanPolicy
 
 from marlin import battery_reader, gps_reader, temp_humidity_reader, wifi_scanner
-from marlin.config import MISSION_CONFIG_PATH, NODE_STATE_PATH, OUTBOUND_QUEUE_PATH
+from marlin.api_server import create_server
+from marlin.config import (
+    ANCHOR_API_BASE,
+    MARLIN_API_HOST,
+    MARLIN_API_PORT,
+    MISSION_CONFIG_PATH,
+    NODE_STATE_PATH,
+    OUTBOUND_QUEUE_PATH,
+)
 from marlin.local_store import load_json, save_json
 from marlin.mission_evaluator import evaluate_mode
 from marlin.snapshot_builder import build_snapshot
-from marlin.uploader import queue_message
+from marlin.uploader import deliver_queued_messages, queue_message
 
 
 def default_mission_config() -> MissionConfig:
@@ -32,7 +42,7 @@ def default_mission_config() -> MissionConfig:
     )
 
 
-def main() -> None:
+def run_cycle() -> None:
     stored_config = load_json(MISSION_CONFIG_PATH)
     if stored_config:
         node_id = stored_config["node_id"]
@@ -84,7 +94,30 @@ def main() -> None:
         },
     )
     queue_message(OUTBOUND_QUEUE_PATH, snapshot.to_dict())
-    print(f"Queued snapshot for {mission_config.node_id} in mode={mode}")
+    delivery_result = deliver_queued_messages(OUTBOUND_QUEUE_PATH, ANCHOR_API_BASE)
+    print(
+        f"Queued snapshot for {mission_config.node_id} in mode={mode}; "
+        f"sent={delivery_result['sent']} queued={delivery_result['queued']}"
+    )
+
+
+def serve(host: str, port: int) -> None:
+    server = create_server(host, port)
+    print(f"MARLIN command server running at http://{host}:{port}")
+    server.serve_forever()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run MARLIN prototype")
+    parser.add_argument("--serve", action="store_true", help="Start the MARLIN command server")
+    parser.add_argument("--host", default=MARLIN_API_HOST)
+    parser.add_argument("--port", type=int, default=MARLIN_API_PORT)
+    args = parser.parse_args()
+
+    if args.serve:
+        serve(args.host, args.port)
+        return
+    run_cycle()
 
 
 if __name__ == "__main__":
