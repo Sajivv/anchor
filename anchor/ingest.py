@@ -7,6 +7,7 @@ from anchor.database import (
     attach_command_to_active_run,
     attach_message_to_active_run,
     load_database,
+    maybe_finalize_active_run,
     save_database,
 )
 from anchor.fleet_manager import update_fleet_state
@@ -40,14 +41,25 @@ def process_message(message: dict) -> dict:
                 )
                 record_command(db, command)
                 attach_command_to_active_run(db, message["node_id"], command.to_dict())
+                save_database(DATABASE_PATH, db)
                 try:
                     command_result = send_command(command)
-                    db["commands"][-1]["delivery_result"] = command_result
+                    db = load_database(DATABASE_PATH)
+                    for existing_command in db["commands"]:
+                        if existing_command.get("command_id") == command.command_id:
+                            existing_command["delivery_result"] = command_result
+                            break
                 except (OSError, HTTPError, URLError, TimeoutError) as exc:
-                    db["commands"][-1]["delivery_error"] = str(exc)
+                    db = load_database(DATABASE_PATH)
+                    for existing_command in db["commands"]:
+                        if existing_command.get("command_id") == command.command_id:
+                            existing_command["delivery_error"] = str(exc)
+                            break
                 print(f"Approved command: {command.to_dict()}")
             else:
                 print(f"Rejected action: {decision}")
+
+    maybe_finalize_active_run(db, message["node_id"])
 
     save_database(DATABASE_PATH, db)
     return {

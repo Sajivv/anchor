@@ -9,6 +9,9 @@ from anchor.config import BASE_DIR, DATABASE_PATH
 from anchor.database import (
     append_chat_message,
     attach_command_to_active_run,
+    export_run_rows_csv,
+    export_summary_payload,
+    finalize_run_by_id,
     load_database,
     save_database,
     start_scenario_run,
@@ -86,6 +89,18 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             if parsed.path == "/api/state":
                 self._respond_json(_build_state_payload())
                 return
+            if parsed.path == "/api/export/runs.json":
+                db = load_database(DATABASE_PATH)
+                self._respond_json(export_summary_payload(db))
+                return
+            if parsed.path == "/api/export/runs.csv":
+                db = load_database(DATABASE_PATH)
+                self._respond_text(
+                    export_run_rows_csv(db),
+                    content_type="text/csv; charset=utf-8",
+                    filename="anchor_run_summary.csv",
+                )
+                return
             if parsed.path == "/api/demo/seed":
                 query = parse_qs(parsed.query)
                 reset = query.get("reset", ["0"])[0] == "1"
@@ -110,6 +125,9 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
                 return
             if parsed.path == "/api/inject-scenario":
                 self._handle_inject_scenario()
+                return
+            if parsed.path == "/api/finalize-run":
+                self._handle_finalize_run()
                 return
             self.send_error(HTTPStatus.NOT_FOUND, "Not found")
 
@@ -216,6 +234,43 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
                 result = json.loads(response.read().decode("utf-8"))
             self._respond_json({"status": "sent", "run": run, "result": result})
 
+        def _handle_finalize_run(self) -> None:
+            content_length = int(self.headers.get("Content-Length", "0"))
+            raw_body = self.rfile.read(content_length) if content_length else b"{}"
+            payload = json.loads(raw_body.decode("utf-8"))
+            run_id = str(payload.get("run_id", "")).strip()
+            status = str(payload.get("status", "completed")).strip() or "completed"
+            note = str(payload.get("note", "")).strip() or None
+            intervention_count = payload.get("intervention_count")
+
+            if not run_id:
+                self.send_error(HTTPStatus.BAD_REQUEST, "Missing run_id")
+                return
+            if status not in {"completed", "failed", "manual_complete"}:
+                self.send_error(HTTPStatus.BAD_REQUEST, "Unsupported status")
+                return
+            if intervention_count is not None:
+                try:
+                    intervention_count = int(intervention_count)
+                except (TypeError, ValueError):
+                    self.send_error(HTTPStatus.BAD_REQUEST, "Invalid intervention_count")
+                    return
+
+            db = load_database(DATABASE_PATH)
+            run = finalize_run_by_id(
+                db,
+                run_id,
+                status=status,
+                completed_reason="manual",
+                intervention_count=intervention_count,
+                note=note,
+            )
+            if not run:
+                self.send_error(HTTPStatus.NOT_FOUND, "Run not found")
+                return
+            save_database(DATABASE_PATH, db)
+            self._respond_json({"status": "finalized", "run": run})
+
         def _respond_html(self, body: str) -> None:
             encoded = body.encode("utf-8")
             self.send_response(HTTPStatus.OK)
@@ -228,6 +283,16 @@ def create_server(host: str, port: int, seed_callback) -> ThreadingHTTPServer:
             encoded = json.dumps(payload, indent=2).encode("utf-8")
             self.send_response(HTTPStatus.OK)
             self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(encoded)))
+            self.end_headers()
+            self.wfile.write(encoded)
+
+        def _respond_text(self, body: str, *, content_type: str, filename: str | None = None) -> None:
+            encoded = body.encode("utf-8")
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", content_type)
+            if filename:
+                self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
             self.send_header("Content-Length", str(len(encoded)))
             self.end_headers()
             self.wfile.write(encoded)
