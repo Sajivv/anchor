@@ -1,5 +1,7 @@
 from datetime import UTC, datetime
+import shutil
 import socket
+import subprocess
 
 from marlin.config import (
     MARLIN_GPS_HOST,
@@ -103,6 +105,27 @@ def _read_hotspot_gps() -> dict[str, float | str] | None:
     return None
 
 
+def _read_hotspot_gps_with_nc() -> dict[str, float | str] | None:
+    nc_path = shutil.which("nc")
+    if nc_path is None:
+        return None
+
+    result = subprocess.run(
+        [nc_path, MARLIN_GPS_HOST, str(MARLIN_GPS_PORT)],
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=MARLIN_GPS_TIMEOUT_SEC,
+    )
+    output = result.stdout or ""
+    for line in output.splitlines():
+        parsed = _parse_nmea_line(line.strip())
+        if parsed:
+            lat, lon = parsed
+            return _mock_fix(lat=lat, lon=lon)
+    return None
+
+
 def read_gps() -> dict[str, float | str]:
     override = consume_gps_override()
     if override:
@@ -114,6 +137,12 @@ def read_gps() -> dict[str, float | str]:
             if hotspot_fix:
                 return hotspot_fix
         except OSError:
+            pass
+        try:
+            hotspot_fix = _read_hotspot_gps_with_nc()
+            if hotspot_fix:
+                return hotspot_fix
+        except (OSError, subprocess.TimeoutExpired):
             pass
 
     return _mock_fix()
