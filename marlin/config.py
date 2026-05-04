@@ -15,5 +15,7 @@ MARLIN_GPS_SOURCE = os.environ.get("MARLIN_GPS_SOURCE", "mock")
 MARLIN_GPS_HOST = os.environ.get("MARLIN_GPS_HOST", "my.jetpack")
 MARLIN_GPS_PORT = int(os.environ.get("MARLIN_GPS_PORT", "11010"))
 MARLIN_GPS_TIMEOUT_SEC = float(os.environ.get("MARLIN_GPS_TIMEOUT_SEC", "5"))
+MARLIN_BATTERY_SOURCE = os.environ.get("MARLIN_BATTERY_SOURCE", "mock")
+MARLIN_BATTERY_PATH = os.environ.get("MARLIN_BATTERY_PATH", "")
 
 DEFAULT_LOW_BATTERY_THRESHOLD = 20

@@ -92,8 +92,8 @@ def apply_scenario(scenario: str, node_id: str, trigger_cycle: bool = True) -> d
             {
                 "gps_override": None,
                 "gps_path": [
-                    {"lat": 38.9376, "lon": -76.4367},
-                    {"lat": 38.9378, "lon": -76.4367},
+                    {"lat": 47.2588, "lon": -122.4382},
+                    {"lat": 47.2591, "lon": -122.4382},
                 ],
             }
         )

@@ -24,9 +24,9 @@ def default_mission_config() -> MissionConfig:
         node_id="marlin-01",
         active_geofence=Geofence(
             type="circle",
-            center_lat=38.9445,
-            center_lon=-76.4367,
-            radius_m=750,
+            center_lat=47.2612,
+            center_lon=-122.4382,
+            radius_m=250,
         ),
         reporting=ReportingPolicy(
             passive_interval_sec=1800,
