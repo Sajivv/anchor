@@ -1,5 +1,15 @@
-def run_wifi_scan(duration_sec: int = 60) -> dict[str, int]:
-    return {"duration_sec": duration_sec, "networks_found": 1}
+from marlin.wifi_scanner import scan_wifi
+
+
+def run_wifi_scan(duration_sec: int = 60) -> dict[str, object]:
+    meta, networks = scan_wifi()
+    return {
+        "duration_sec": duration_sec,
+        "networks_found": len(networks),
+        "scan_backend": meta.get("scan_backend"),
+        "interface": meta.get("interface"),
+        "networks": networks,
+    }
 
 
 def start_wifi_monitor(target: dict, duration_sec: int) -> dict:
