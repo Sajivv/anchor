@@ -175,4 +175,3 @@ def read_gps() -> dict[str, float | str]:
 
     print("[gps] falling back to mock fix")
     return _mock_fix()
-Jot something down
