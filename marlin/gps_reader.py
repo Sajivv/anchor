@@ -111,7 +111,7 @@ def _read_hotspot_gps_with_nc() -> dict[str, float | str] | None:
         return None
 
     result = subprocess.run(
-        [nc_path, MARLIN_GPS_HOST, str(MARLIN_GPS_PORT)],
+        [nc_path, "-w", "1", MARLIN_GPS_HOST, str(MARLIN_GPS_PORT)],
         check=False,
         capture_output=True,
         text=True,
