@@ -63,6 +63,18 @@ def _parse_nmea_line(line: str) -> tuple[float, float] | None:
         if lat is not None and lon is not None:
             return lat, lon
 
+    if sentence in {"$GPGLL", "$GNGLL"} and len(parts) >= 7 and parts[6][:1] == "A":
+        lat = _nmea_to_decimal(parts[1], parts[2])
+        lon = _nmea_to_decimal(parts[3], parts[4])
+        if lat is not None and lon is not None:
+            return lat, lon
+
+    if sentence in {"$GPGNS", "$GNGNS"} and len(parts) >= 6 and parts[6][:1] not in {"", "N"}:
+        lat = _nmea_to_decimal(parts[2], parts[3])
+        lon = _nmea_to_decimal(parts[4], parts[5])
+        if lat is not None and lon is not None:
+            return lat, lon
+
     return None
 
 
