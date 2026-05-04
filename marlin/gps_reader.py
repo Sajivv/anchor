@@ -84,12 +84,18 @@ def _read_hotspot_gps() -> dict[str, float | str] | None:
         timeout=MARLIN_GPS_TIMEOUT_SEC,
     ) as sock:
         sock.settimeout(MARLIN_GPS_TIMEOUT_SEC)
-        with sock.makefile("r", encoding="ascii", errors="ignore") as stream:
-            deadline = datetime.now().timestamp() + MARLIN_GPS_TIMEOUT_SEC
-            while datetime.now().timestamp() < deadline:
-                line = stream.readline()
-                if not line:
-                    break
+        deadline = datetime.now().timestamp() + MARLIN_GPS_TIMEOUT_SEC
+        buffer = ""
+        while datetime.now().timestamp() < deadline:
+            try:
+                chunk = sock.recv(4096)
+            except TimeoutError:
+                break
+            if not chunk:
+                break
+            buffer += chunk.decode("ascii", errors="ignore")
+            while "\n" in buffer:
+                line, buffer = buffer.split("\n", 1)
                 parsed = _parse_nmea_line(line.strip())
                 if parsed:
                     lat, lon = parsed
