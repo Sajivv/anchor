@@ -24,7 +24,7 @@
 - ANCHOR can:
   - receive snapshots, events, and command responses
   - update fleet state
-  - run Codex-style reasoning on selected triggers
+  - run OpenAI-backed or mock Codex-style reasoning on selected triggers
   - issue structured commands to MARLIN
   - run in `baseline` or `anchor_managed` mode
 - Dashboard can:
@@ -67,3 +67,14 @@
   - ANCHOR records telemetry
   - ANCHOR updates fleet state and dashboard
   - ANCHOR does not auto-run reasoning or auto-issue commands
+
+## Reasoning Backend
+
+- `ANCHOR_REASONING_BACKEND=openai`
+  - uses the OpenAI Responses API
+  - requires `OPENAI_API_KEY`
+  - defaults to model `gpt-5.3-codex`
+- `ANCHOR_REASONING_BACKEND=mock`
+  - uses the local deterministic policy in the prototype
+
+If the OpenAI-backed path fails at runtime, the current implementation falls back to the mock policy and records a fallback reason in the reasoning result.

@@ -18,6 +18,7 @@ from anchor.database import (
 )
 from anchor.ingest import process_message
 from anchor.command_center import make_command, send_command
+from marlin.main import default_mission_config
 
 
 WEB_INDEX_PATH = BASE_DIR / "web" / "index.html"
@@ -29,6 +30,9 @@ def _load_index_html() -> str:
 def _build_state_payload() -> dict:
     db = load_database(DATABASE_PATH)
     fleet_state = db.get("fleet_state", {})
+    missions = dict(db.get("missions", {}))
+    if "marlin-01" not in missions:
+        missions["marlin-01"] = default_mission_config().to_dict()
     markers = []
     for node_id, entry in fleet_state.items():
         gps = entry.get("gps") or {}
@@ -43,7 +47,27 @@ def _build_state_payload() -> dict:
                 "last_event_type": entry.get("last_event_type"),
             }
         )
-    return {"database": db, "markers": markers, "system_mode": db.get("system_mode", "anchor_managed")}
+    geofences = []
+    for node_id, mission in missions.items():
+        geofence = (mission or {}).get("active_geofence") or {}
+        if not geofence:
+            continue
+        geofences.append(
+            {
+                "node_id": node_id,
+                "mission_id": mission.get("mission_id"),
+                "center_lat": geofence.get("center_lat"),
+                "center_lon": geofence.get("center_lon"),
+                "radius_m": geofence.get("radius_m"),
+                "type": geofence.get("type"),
+            }
+        )
+    return {
+        "database": db,
+        "markers": markers,
+        "geofences": geofences,
+        "system_mode": db.get("system_mode", "anchor_managed"),
+    }
 
 
 def _anchor_chat_reply(user_text: str, db: dict) -> str:

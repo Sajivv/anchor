@@ -7,6 +7,7 @@ def load_state() -> dict:
         SCENARIO_STATE_PATH,
         default={
             "gps_override": None,
+            "gps_path": None,
             "battery_override": None,
             "wifi_override": None,
             "disconnect": False,
@@ -29,6 +30,7 @@ def update_state(patch: dict) -> dict:
 def reset_state() -> dict:
     state = {
         "gps_override": None,
+        "gps_path": None,
         "battery_override": None,
         "wifi_override": None,
         "disconnect": False,
@@ -45,3 +47,16 @@ def consume_fail_next_command() -> bool:
         state["fail_next_command"] = False
         save_state(state)
     return should_fail
+
+
+def consume_gps_override() -> dict | None:
+    state = load_state()
+    gps_path = state.get("gps_path") or []
+    if gps_path:
+        point = gps_path.pop(0)
+        state["gps_path"] = gps_path or None
+        if not gps_path:
+            state["gps_override"] = point
+        save_state(state)
+        return point
+    return state.get("gps_override")

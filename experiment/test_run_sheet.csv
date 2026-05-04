@@ -1,0 +1,11 @@
+Planned Run,Run ID,Scenario,Mode,Expected Behavior,Actual Behavior,Success?,Intervention Count,Commands Issued,Command Failures,Duration (s),Event Count,Snapshot Count,Last Mode,Last Battery,Notes
+1,,low_battery,baseline,"Operator notices low battery and manually reduces activity.",,,,,,,,,,,
+2,,low_battery,anchor_managed,"System detects low battery and shifts into low-power behavior automatically.",,,,,,,,,,,
+3,,geofence_entry,baseline,"Operator notices geofence entry and manually increases activity or scanning.",,,,,,,,,,,
+4,,geofence_entry,anchor_managed,"MARLIN enters the geofence, switches behavior automatically, and ANCHOR reacts without manual input.",,,,,,,,,,,
+5,,target_wifi_detection,baseline,"Operator inspects Wi-Fi results and decides whether to trigger a follow-up action.",,,,,,,,,,,
+6,,target_wifi_detection,anchor_managed,"MARLIN reports target detection and ANCHOR handles follow-up behavior automatically.",,,,,,,,,,,
+7,,disconnect,baseline,"Operator must account for the communication loss and later verify node recovery manually.",,,,,,,,,,,
+8,,disconnect,anchor_managed,"MARLIN continues from cached mission state and the run is later finalized after validating degraded operation.",,,,,,,,,,,
+9,,command_failure,baseline,"Operator diagnoses the failed command and decides whether to retry or recover manually.",,,,,,,,,,,
+10,,command_failure,anchor_managed,"MARLIN reports command failure and ANCHOR handles or records the recovery path with minimal human help.",,,,,,,,,,,

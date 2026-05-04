@@ -11,5 +11,9 @@ SCENARIO_STATE_PATH = LOCAL_CACHE_DIR / "scenario_state.json"
 ANCHOR_API_BASE = os.environ.get("ANCHOR_API_BASE", "http://127.0.0.1:8000")
 MARLIN_API_HOST = os.environ.get("MARLIN_API_HOST", "127.0.0.1")
 MARLIN_API_PORT = int(os.environ.get("MARLIN_API_PORT", "9001"))
+MARLIN_GPS_SOURCE = os.environ.get("MARLIN_GPS_SOURCE", "mock")
+MARLIN_GPS_HOST = os.environ.get("MARLIN_GPS_HOST", "my.jetpack")
+MARLIN_GPS_PORT = int(os.environ.get("MARLIN_GPS_PORT", "11010"))
+MARLIN_GPS_TIMEOUT_SEC = float(os.environ.get("MARLIN_GPS_TIMEOUT_SEC", "5"))
 
 DEFAULT_LOW_BATTERY_THRESHOLD = 20

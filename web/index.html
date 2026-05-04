@@ -158,6 +158,16 @@
         color: var(--accent);
       }
 
+      .geofence-label {
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+      }
+
       .map-empty {
         position: absolute;
         inset: 0;
@@ -505,9 +515,7 @@
               <p>Recent messages, reasoning runs, and generated commands.</p>
             </div>
           </div>
-          <div class="list" id="messages-list"></div>
-          <div style="height: 12px"></div>
-          <div class="list" id="reasoning-list"></div>
+          <div class="list" id="activity-list"></div>
         </div>
       </section>
 
@@ -533,8 +541,7 @@
     <script>
       const mapEmpty = document.getElementById("map-empty");
       const fleetList = document.getElementById("fleet-list");
-      const messagesList = document.getElementById("messages-list");
-      const reasoningList = document.getElementById("reasoning-list");
+      const activityList = document.getElementById("activity-list");
       const runsList = document.getElementById("runs-list");
       const aggregateSummary = document.getElementById("aggregate-summary");
       const chatLog = document.getElementById("chat-log");
@@ -546,6 +553,7 @@
         scrollWheelZoom: true
       }).setView([38.9445, -76.4367], 11);
       const markerLayer = L.layerGroup().addTo(map);
+      const geofenceLayer = L.layerGroup().addTo(map);
       const markersByNode = new Map();
       let chatMessages = [];
 
@@ -564,11 +572,32 @@
         });
       }
 
-      function renderMap(markers) {
+      function renderMap(markers, geofences) {
         markerLayer.clearLayers();
+        geofenceLayer.clearLayers();
         markersByNode.clear();
+        geofences.forEach((geofence) => {
+          if (geofence.center_lat == null || geofence.center_lon == null || geofence.radius_m == null) {
+            return;
+          }
+          L.circle([geofence.center_lat, geofence.center_lon], {
+            radius: geofence.radius_m,
+            color: "#0f766e",
+            weight: 2,
+            fillColor: "#6dd3c7",
+            fillOpacity: 0.16,
+            dashArray: "6 8",
+          })
+            .bindTooltip(`${geofence.node_id} geofence`, {
+              permanent: true,
+              direction: "top",
+              className: "geofence-label",
+              offset: [0, -4],
+            })
+            .addTo(geofenceLayer);
+        });
         const validMarkers = markers.filter((marker) => marker.lat != null && marker.lon != null);
-        if (!validMarkers.length) {
+        if (!validMarkers.length && !geofences.length) {
           mapEmpty.style.display = "flex";
           return;
         }
@@ -587,6 +616,11 @@
             `)
             .addTo(markerLayer);
           markersByNode.set(marker.node_id, leafletMarker);
+        });
+        geofences.forEach((geofence) => {
+          if (geofence.center_lat != null && geofence.center_lon != null) {
+            latLngs.push([geofence.center_lat, geofence.center_lon]);
+          }
         });
 
         if (latLngs.length === 1) {
@@ -664,53 +698,61 @@
         });
       }
 
-      function renderMessages(messages) {
-        if (!messages.length) {
-          messagesList.innerHTML = '<div class="empty">No messages yet.</div>';
-          return;
-        }
-        const recent = [...messages].slice(-6).reverse();
-        messagesList.innerHTML = recent.map((message) => `
-          <div class="item">
-            <strong>${message.message_type}</strong><br>
-            <small>${message.node_id ?? "system"} • ${message.timestamp ?? "no timestamp"}</small>
-            <details class="debug">
-              <summary>Debug JSON</summary>
-              <pre>${JSON.stringify(message, null, 2)}</pre>
-            </details>
-          </div>
-        `).join("");
-      }
-
-      function renderReasoning(runs, commands) {
-        const blocks = [];
-        const recentRuns = [...runs].slice(-3).reverse();
-        recentRuns.forEach((run) => {
-          blocks.push(`
-            <div class="item">
-              <strong>Reasoning</strong><br>
-              <small>Confidence: ${run.confidence}</small>
-              <details class="debug">
-                <summary>Debug JSON</summary>
-                <pre>${JSON.stringify(run, null, 2)}</pre>
-              </details>
-            </div>
-          `);
+      function renderActivity(messages, runs, commands) {
+        const feedItems = [];
+        messages.forEach((message) => {
+          feedItems.push({
+            kind: "message",
+            timestamp: message.timestamp || "",
+            html: `
+              <div class="item">
+                <strong>${message.message_type}</strong><br>
+                <small>${message.node_id ?? "system"} • ${message.timestamp ?? "no timestamp"}</small>
+                <details class="debug">
+                  <summary>Debug JSON</summary>
+                  <pre>${JSON.stringify(message, null, 2)}</pre>
+                </details>
+              </div>
+            `,
+          });
         });
-        const recentCommands = [...commands].slice(-4).reverse();
-        recentCommands.forEach((command) => {
-          blocks.push(`
-            <div class="item">
-              <strong>Command</strong><br>
-              <small>${command.command_id} • ${command.type}</small>
-              <details class="debug">
-                <summary>Debug JSON</summary>
-                <pre>${JSON.stringify(command, null, 2)}</pre>
-              </details>
-            </div>
-          `);
+        runs.forEach((run) => {
+          feedItems.push({
+            kind: "reasoning",
+            timestamp: run.timestamp || "",
+            html: `
+              <div class="item">
+                <strong>Reasoning</strong><br>
+                <small>${run.node_id ?? "unknown"} • ${run.trigger_type ?? "unknown"} • ${run.timestamp ?? "no timestamp"}</small><br>
+                <small>Confidence: ${run.confidence}</small>
+                <details class="debug">
+                  <summary>Debug JSON</summary>
+                  <pre>${JSON.stringify(run, null, 2)}</pre>
+                </details>
+              </div>
+            `,
+          });
         });
-        reasoningList.innerHTML = blocks.join("") || '<div class="empty">No reasoning runs or commands yet.</div>';
+        commands.forEach((command) => {
+          feedItems.push({
+            kind: "command",
+            timestamp: command.issued_at || "",
+            html: `
+              <div class="item">
+                <strong>Command</strong><br>
+                <small>${command.command_id} • ${command.type} • ${command.issued_at ?? "no timestamp"}</small>
+                <details class="debug">
+                  <summary>Debug JSON</summary>
+                  <pre>${JSON.stringify(command, null, 2)}</pre>
+                </details>
+              </div>
+            `,
+          });
+        });
+        const sorted = feedItems
+          .sort((a, b) => (b.timestamp || "").localeCompare(a.timestamp || ""))
+          .slice(0, 10);
+        activityList.innerHTML = sorted.map((item) => item.html).join("") || '<div class="empty">No activity yet.</div>';
       }
 
       function renderChat() {
@@ -813,10 +855,9 @@
         document.getElementById("node-count").textContent = Object.keys(db.fleet_state).length;
         document.getElementById("message-count").textContent = db.messages.length;
         document.getElementById("command-count").textContent = db.commands.length;
-        renderMap(payload.markers);
+        renderMap(payload.markers, payload.geofences || []);
         renderFleet(db.fleet_state);
-        renderMessages(db.messages);
-        renderReasoning(db.reasoning_runs, db.commands);
+        renderActivity(db.messages, db.reasoning_runs, db.commands);
         renderRuns(db.scenario_runs || []);
         renderAggregateSummary(buildAggregateRows(db.scenario_runs || []));
         chatMessages = db.chat_history || [];

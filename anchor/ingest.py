@@ -1,3 +1,4 @@
+from datetime import datetime, UTC
 from urllib.error import HTTPError, URLError
 
 from anchor.command_center import make_command, record_command, send_command
@@ -28,6 +29,9 @@ def process_message(message: dict) -> dict:
         mission_config = get_mission_config(db, message["node_id"])
         context = build_reasoning_context(message, fleet_entry, mission_config)
         reasoning_result = reason(context)
+        reasoning_result["timestamp"] = datetime.now(UTC).isoformat()
+        reasoning_result["node_id"] = message["node_id"]
+        reasoning_result["trigger_type"] = message.get("type", message.get("message_type"))
         db["reasoning_runs"].append(reasoning_result)
 
         for index, action in enumerate(reasoning_result["recommended_actions"], start=1):

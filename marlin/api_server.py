@@ -1,4 +1,5 @@
 import json
+import time
 from datetime import datetime, UTC
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -87,11 +88,26 @@ def apply_scenario(scenario: str, node_id: str, trigger_cycle: bool = True) -> d
         return {"status": "applied", "scenario": scenario, "state": state}
 
     if scenario == "geofence_entry":
-        state = update_state({"gps_override": {"lat": 38.9445, "lon": -76.4367}})
-        _emit_event(node_id, "entered_geofence", {"geofence_id": "target-zone-1"})
+        state = update_state(
+            {
+                "gps_override": None,
+                "gps_path": [
+                    {"lat": 38.9376, "lon": -76.4367},
+                    {"lat": 38.9378, "lon": -76.4367},
+                ],
+            }
+        )
         if trigger_cycle:
             _run_cycle()
-        return {"status": "applied", "scenario": scenario, "state": state}
+            time.sleep(0.4)
+            _emit_event(node_id, "entered_geofence", {"geofence_id": "target-zone-1"})
+            _run_cycle()
+        return {
+            "status": "applied",
+            "scenario": scenario,
+            "state": state,
+            "path_points": 2,
+        }
 
     if scenario == "low_battery":
         state = update_state({"battery_override": 14})
