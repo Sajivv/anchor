@@ -1,5 +1,9 @@
 import argparse
+import threading
+import time
+from datetime import UTC, datetime
 
+from shared.event import Event
 from shared.mission_config import Geofence, MissionConfig, ReportingPolicy, SleepRules, WifiScanPolicy
 
 from marlin import battery_reader, gps_reader, temp_humidity_reader, wifi_scanner
@@ -8,6 +12,7 @@ from marlin.config import (
     ANCHOR_API_BASE,
     MARLIN_API_HOST,
     MARLIN_API_PORT,
+    MARLIN_LOOP_INTERVAL_SEC,
     MISSION_CONFIG_PATH,
     NODE_STATE_PATH,
     OUTBOUND_QUEUE_PATH,
@@ -29,8 +34,8 @@ def default_mission_config() -> MissionConfig:
             radius_m=250,
         ),
         reporting=ReportingPolicy(
-            passive_interval_sec=1800,
-            active_interval_sec=120,
+            passive_interval_sec=60,
+            active_interval_sec=60,
         ),
         wifi_scan_policy=WifiScanPolicy(
             passive_scan_enabled=False,
@@ -82,6 +87,8 @@ def run_cycle() -> None:
         wifi_scan_meta=wifi_scan_meta,
         wifi_scan=wifi_scan,
     )
+    previous_state = load_json(NODE_STATE_PATH, default={})
+    previous_mode = previous_state.get("mode")
     save_json(
         NODE_STATE_PATH,
         {
@@ -91,9 +98,17 @@ def run_cycle() -> None:
             "battery": snapshot.battery,
             "environment": snapshot.environment,
             "wifi_scan_meta": snapshot.wifi_scan_meta,
+            "last_snapshot_at": snapshot.timestamp,
         },
     )
     queue_message(OUTBOUND_QUEUE_PATH, snapshot.to_dict())
+    if previous_mode != mode:
+        _emit_mode_events(
+            node_id=mission_config.node_id,
+            previous_mode=previous_mode,
+            current_mode=mode,
+            gps=snapshot.gps,
+        )
     delivery_result = deliver_queued_messages(OUTBOUND_QUEUE_PATH, ANCHOR_API_BASE)
     print(
         f"Queued snapshot for {mission_config.node_id} in mode={mode}; "
@@ -101,9 +116,63 @@ def run_cycle() -> None:
     )
 
 
+def _emit_mode_events(
+    *,
+    node_id: str,
+    previous_mode: str | None,
+    current_mode: str,
+    gps: dict,
+) -> None:
+    if previous_mode == current_mode:
+        return
+
+    mode_event = Event(
+        event_id=f"evt-mode-{datetime.now(UTC).strftime('%H%M%S')}",
+        node_id=node_id,
+        type="mode_changed",
+        details={
+            "previous_mode": previous_mode,
+            "current_mode": current_mode,
+            "gps": gps,
+        },
+    )
+    queue_message(OUTBOUND_QUEUE_PATH, mode_event.to_dict())
+
+    if previous_mode != "active" and current_mode == "active":
+        geofence_event = Event(
+            event_id=f"evt-entered-{datetime.now(UTC).strftime('%H%M%S')}",
+            node_id=node_id,
+            type="entered_geofence",
+            details={"gps": gps},
+        )
+        queue_message(OUTBOUND_QUEUE_PATH, geofence_event.to_dict())
+    elif previous_mode == "active" and current_mode != "active":
+        geofence_event = Event(
+            event_id=f"evt-left-{datetime.now(UTC).strftime('%H%M%S')}",
+            node_id=node_id,
+            type="left_geofence",
+            details={"gps": gps},
+        )
+        queue_message(OUTBOUND_QUEUE_PATH, geofence_event.to_dict())
+
+
+def _background_loop() -> None:
+    while True:
+        try:
+            run_cycle()
+        except Exception as exc:
+            print(f"MARLIN background cycle failed: {exc}")
+        time.sleep(MARLIN_LOOP_INTERVAL_SEC)
+
+
 def serve(host: str, port: int) -> None:
+    loop_thread = threading.Thread(target=_background_loop, daemon=True)
+    loop_thread.start()
     server = create_server(host, port)
-    print(f"MARLIN command server running at http://{host}:{port}")
+    print(
+        f"MARLIN command server running at http://{host}:{port} "
+        f"with background loop every {MARLIN_LOOP_INTERVAL_SEC}s"
+    )
     server.serve_forever()
 
 
