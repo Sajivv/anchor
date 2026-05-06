@@ -1,6 +1,7 @@
 import json
 import os
 from urllib import request
+from urllib.error import HTTPError
 
 from shared.anchor_command import AnchorCommand
 
@@ -29,5 +30,15 @@ def send_command(command: AnchorCommand, api_base: str | None = None) -> dict:
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    with request.urlopen(req, timeout=5) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with request.urlopen(req, timeout=5) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except HTTPError as exc:
+        raw_body = exc.read().decode("utf-8")
+        try:
+            payload = json.loads(raw_body)
+        except json.JSONDecodeError:
+            payload = {"raw_body": raw_body}
+        payload["_http_status"] = exc.code
+        payload["_http_error"] = str(exc)
+        return payload

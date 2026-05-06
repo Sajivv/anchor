@@ -53,6 +53,11 @@ def process_message(message: dict) -> dict:
                         if existing_command.get("command_id") == command.command_id:
                             existing_command["delivery_result"] = command_result
                             break
+                    failed_response = command_result.get("failed")
+                    if isinstance(failed_response, dict):
+                        append_message(db, failed_response)
+                        update_fleet_state(db, failed_response)
+                        attach_message_to_active_run(db, failed_response)
                 except (OSError, HTTPError, URLError, TimeoutError) as exc:
                     db = load_database(DATABASE_PATH)
                     for existing_command in db["commands"]:

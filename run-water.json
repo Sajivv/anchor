@@ -1,0 +1,6003 @@
+{
+  "missions": {},
+  "fleet_state": {
+    "marlin-01": {
+      "last_snapshot_at": "2026-05-05T02:18:00.284214+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.262058533333324,
+        "lon": -122.43818876666667
+      },
+      "battery": {
+        "percent": 6
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "last_event_at": "2026-05-05T01:39:42.021475+00:00",
+      "last_event_type": "mode_changed"
+    }
+  },
+  "messages": [
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T22:58:26.003480+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25441128333333,
+        "lon": -122.43430588333334
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "event_id": "evt-mode-225826",
+      "node_id": "marlin-01",
+      "type": "mode_changed",
+      "severity": "info",
+      "details": {
+        "previous_mode": null,
+        "current_mode": "passive",
+        "gps": {
+          "lat": 47.25441128333333,
+          "lon": -122.43430588333334
+        }
+      },
+      "timestamp": "2026-05-04T22:58:26.004455+00:00",
+      "message_type": "event"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T22:58:35.499840+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25441121666666,
+        "lon": -122.43430586666666
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T22:59:26.434821+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25441106666667,
+        "lon": -122.43430563333335
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:00:26.503794+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.254411233333336,
+        "lon": -122.43430521666666
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:01:26.703721+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.254410683333326,
+        "lon": -122.43430465000002
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:02:27.408210+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.254392016666664,
+        "lon": -122.43427956666667
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:03:28.067779+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25444928333333,
+        "lon": -122.43369579999998
+      },
+      "battery": {
+        "percent": 62
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:04:28.208588+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25491363333334,
+        "lon": -122.43337463333334
+      },
+      "battery": {
+        "percent": 61
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:05:28.312012+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25546096666667,
+        "lon": -122.43334191666666
+      },
+      "battery": {
+        "percent": 61
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:06:29.115227+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.255741549999996,
+        "lon": -122.43356620000002
+      },
+      "battery": {
+        "percent": 61
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:07:29.214988+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25578408333334,
+        "lon": -122.4335764
+      },
+      "battery": {
+        "percent": 61
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:08:29.411539+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25585841666666,
+        "lon": -122.43354038333334
+      },
+      "battery": {
+        "percent": 60
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:09:29.512047+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25594233333333,
+        "lon": -122.43354175
+      },
+      "battery": {
+        "percent": 59
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:10:30.276271+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25651815,
+        "lon": -122.43379166666666
+      },
+      "battery": {
+        "percent": 59
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:11:30.421660+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25705241666666,
+        "lon": -122.43412036666665
+      },
+      "battery": {
+        "percent": 59
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:12:31.116321+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.257604816666664,
+        "lon": -122.43441121666667
+      },
+      "battery": {
+        "percent": 59
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:13:31.319470+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25811303333333,
+        "lon": -122.43485899999999
+      },
+      "battery": {
+        "percent": 58
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:14:31.619457+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.258651650000004,
+        "lon": -122.43522428333333
+      },
+      "battery": {
+        "percent": 58
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:15:32.053846+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.25914745,
+        "lon": -122.43570518333333
+      },
+      "battery": {
+        "percent": 58
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:16:36.334048+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.259552183333334,
+        "lon": -122.43614093333332
+      },
+      "battery": {
+        "percent": 58
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:16:36.334029+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 42
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "REOLINK-HHFlqX1BM3-2.4G",
+          "bssid": "EC",
+          "rssi": 71,
+          "channel": null
+        },
+        {
+          "ssid": "DIRECT-F0-HP OfficeJet Pro 7740",
+          "bssid": "B6",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Tedger",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "MalwareVault",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "Safarai-04k",
+          "bssid": "DA",
+          "rssi": 48,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "DA",
+          "rssi": 48,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "2A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "CC",
+          "rssi": 28,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "A2",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "EE",
+          "rssi": 79,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "32",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Linksys11703",
+          "bssid": "60",
+          "rssi": 38,
+          "channel": null
+        },
+        {
+          "ssid": "ilwu-local-8",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Stroud",
+          "bssid": "4C",
+          "rssi": 12,
+          "channel": 65
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "4E",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "REOLINK-HHFlqX1BM3-5G",
+          "bssid": "EC",
+          "rssi": 71,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "52",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "32",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "XFinMalwareCache",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "CBCI-E22A",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "3C",
+          "rssi": null,
+          "channel": 77
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "AA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "F6",
+          "rssi": 79,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "46",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "46",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "4E",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "DA",
+          "rssi": 48,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "event_id": "evt-mode-231636",
+      "node_id": "marlin-01",
+      "type": "mode_changed",
+      "severity": "info",
+      "details": {
+        "previous_mode": "passive",
+        "current_mode": "active",
+        "gps": {
+          "lat": 47.259552183333334,
+          "lon": -122.43614093333332
+        }
+      },
+      "timestamp": "2026-05-04T23:16:36.334693+00:00",
+      "message_type": "event"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:17:42.684907+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.25975653333333,
+        "lon": -122.43635426666667
+      },
+      "battery": {
+        "percent": 58
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:17:42.684888+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 56
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "CBCI-C1A2",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "MalwareVault",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "2E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": 99
+        },
+        {
+          "ssid": "DIRECT-BB-HP DeskJet 2700 series",
+          "bssid": "BC",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "42",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "546",
+          "bssid": "AC",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "C2",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "8A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "B0",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "BE",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "B6",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4E",
+          "rssi": 12,
+          "channel": 65
+        },
+        {
+          "ssid": "COMC-Corp",
+          "bssid": "1C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "COMCGuest",
+          "bssid": "22",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "COMC-IoT",
+          "bssid": "26",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "COMC-Corp-RED",
+          "bssid": "2A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "COMC-MLOTest",
+          "bssid": "2E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "32",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand on Broadway Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand on Broadway IOT",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "P66Guest",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "14dbbe3",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "It Hurt When iP",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "wirelessreality",
+          "bssid": "6C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Reality-5G-Guest",
+          "bssid": "92",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": 83
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "52",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "XFinMalwareCache",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "NETGEAR51-5G",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "CBCI-E22A",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "SBG8300Guest-46B9-5G",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "SBG8300-46B9-5G",
+          "bssid": "48",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "Verizon_9PC4GL",
+          "bssid": "A8",
+          "rssi": null,
+          "channel": 37
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "Lunchbox",
+          "bssid": "00",
+          "rssi": 24,
+          "channel": null
+        },
+        {
+          "ssid": "Linksys11703",
+          "bssid": "60",
+          "rssi": 38,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "AE",
+          "rssi": 70,
+          "channel": null
+        },
+        {
+          "ssid": "DuckHouse",
+          "bssid": "08",
+          "rssi": 36,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "46",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "B6",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "AE",
+          "rssi": 70,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "event_id": "evt-entered-231636",
+      "node_id": "marlin-01",
+      "type": "entered_geofence",
+      "severity": "info",
+      "details": {
+        "gps": {
+          "lat": 47.259552183333334,
+          "lon": -122.43614093333332
+        }
+      },
+      "timestamp": "2026-05-04T23:16:36.334813+00:00",
+      "message_type": "event"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:18:50.881878+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.2601113,
+        "lon": -122.43635948333333
+      },
+      "battery": {
+        "percent": 57
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:18:50.881860+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 53
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "CBCI-68A6",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "DIRECT-F0-HP OfficeJet Pro 7740",
+          "bssid": "B6",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "MalwareVault",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "NETGEAR51",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "Dave cave 2.4",
+          "bssid": "20",
+          "rssi": 23,
+          "channel": 51
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Lunchbox",
+          "bssid": "00",
+          "rssi": 24,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-79E4-2.4",
+          "bssid": "DC",
+          "rssi": null,
+          "channel": 7
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "BE",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "BA",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-C1A2",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "P66Guest",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "14dbbe3",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "It Hurt When iP",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "wirelessreality",
+          "bssid": "6C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Reality-5G-Guest",
+          "bssid": "92",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-79E4-5",
+          "bssid": "DC",
+          "rssi": null,
+          "channel": 7
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "E2",
+          "rssi": null,
+          "channel": 7
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "46",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "XFinMalwareCache",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "NETGEAR51-5G",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "RTD-2.4_5GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "CBCI-E22A",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "SBG8300Guest-46B9-5G",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "SBG8300-46B9-5G",
+          "bssid": "48",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "Verizon_RC4KZJ",
+          "bssid": "1C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CHB",
+          "bssid": "54",
+          "rssi": 7,
+          "channel": null
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "4E",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Tony's",
+          "bssid": "D8",
+          "rssi": null,
+          "channel": 61
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "BA",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "4E",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "56",
+          "rssi": 7,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "94",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CenturyLink1632",
+          "bssid": "30",
+          "rssi": 91,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:19:57.014703+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.26053400000001,
+        "lon": -122.43656648333332
+      },
+      "battery": {
+        "percent": 57
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:19:57.014687+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 57
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "CBCI-68A6",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "2E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "MelancholySpleen",
+          "bssid": "2A",
+          "rssi": 94,
+          "channel": 1
+        },
+        {
+          "ssid": "wirelessreality",
+          "bssid": "6C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-ACD8",
+          "bssid": "96",
+          "rssi": 4,
+          "channel": null
+        },
+        {
+          "ssid": "Reality-Guest",
+          "bssid": "AA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "ARLO_VMB_0088191400",
+          "bssid": "A4",
+          "rssi": 11,
+          "channel": 62
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "DIRECT-F0-HP OfficeJet Pro 7740",
+          "bssid": "B6",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "MalwareVault",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "hellokittyshouse",
+          "bssid": "AC",
+          "rssi": 91,
+          "channel": null
+        },
+        {
+          "ssid": "NETGEAR51",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "ARLO_VMB_1585693054",
+          "bssid": "08",
+          "rssi": 2,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-79E4-2.4",
+          "bssid": "DC",
+          "rssi": null,
+          "channel": 7
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "BE",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "8A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "B6",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "32",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "BA",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "a194f",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "B0",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "C2",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "2A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Pyxis-Secure",
+          "bssid": "2C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Pyxis-Guest",
+          "bssid": "2C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "HOME-9332",
+          "bssid": "08",
+          "rssi": 36,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "P66Guest",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "14dbbe3",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "It Hurt When iP",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "24",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "2E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "NETGEAR51-5G",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "72",
+          "rssi": 13,
+          "channel": 1
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "4E",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "46",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "SBG8300-46B9-5G",
+          "bssid": "48",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "SBG8300-46B9",
+          "bssid": "48",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "NETGEAR53",
+          "bssid": "34",
+          "rssi": 98,
+          "channel": null
+        },
+        {
+          "ssid": "Wu-Tang LAN",
+          "bssid": "3C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "94",
+          "rssi": null,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:21:05.044471+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.26108695,
+        "lon": -122.4368425
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:21:05.044453+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 53
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "CBCI-68A6",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "DIRECT-C2-HP OfficeJet Pro 8720",
+          "bssid": "98",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "62",
+          "rssi": 6,
+          "channel": 10
+        },
+        {
+          "ssid": "Penthouse",
+          "bssid": "C6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "C6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "MelancholySpleen",
+          "bssid": "2A",
+          "rssi": 94,
+          "channel": 1
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Lunchbox",
+          "bssid": "00",
+          "rssi": 24,
+          "channel": null
+        },
+        {
+          "ssid": "TCWifi",
+          "bssid": "6E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": 99
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "CC",
+          "rssi": 28,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "8A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "B6",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "a194f",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "2A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Dave cave",
+          "bssid": "20",
+          "rssi": 23,
+          "channel": 51
+        },
+        {
+          "ssid": "RB",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-C1A2",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Braxton",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand On Broadway WiFi",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand on Broadway Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand on Broadway IOT",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand On Broadway Guest",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "P66Guest",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "XFinMalwareCache",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "RTD-2.4_5GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "1E",
+          "rssi": null,
+          "channel": 72
+        },
+        {
+          "ssid": "Dashow-5.0",
+          "bssid": "1E",
+          "rssi": null,
+          "channel": 72
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "1E",
+          "rssi": null,
+          "channel": 72
+        },
+        {
+          "ssid": "Penthouse",
+          "bssid": "C6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "C6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "4E",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "2A",
+          "rssi": null,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:22:07.530133+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.26171035000001,
+        "lon": -122.43715156666667
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:22:07.530114+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 40
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "CBCI-68A6",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "ARLO_VMB_1585693054",
+          "bssid": "08",
+          "rssi": 2,
+          "channel": null
+        },
+        {
+          "ssid": "The Grand on Broadway IOT",
+          "bssid": "40",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "B6",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "B0",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "BE",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "FHM-LA-1",
+          "bssid": "32",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Orion_1612",
+          "bssid": "42",
+          "rssi": 75,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-68A6",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-C1A2",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Xfinity Mobile",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "The Lex Managment",
+          "bssid": "32",
+          "rssi": 87,
+          "channel": null
+        },
+        {
+          "ssid": "Atlas Networks Instant Internet",
+          "bssid": "36",
+          "rssi": 87,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "P66Guest",
+          "bssid": "3C",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "46",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "R10boxCo",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "WRKwifi",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "handheld1",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "vendor_wifi",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "TOTALTRAX",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "R10VoIP",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "XFinMalwareCache",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "WeLikeFoodHere",
+          "bssid": "AC",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Lunchbox",
+          "bssid": "00",
+          "rssi": 24,
+          "channel": null
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "80",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "ARLO_VMB_0088191400",
+          "bssid": "A4",
+          "rssi": 11,
+          "channel": 62
+        },
+        {
+          "ssid": "PDAP-Internal",
+          "bssid": "94",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "B0",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "9A",
+          "rssi": null,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:23:10.373625+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.26234735,
+        "lon": -122.43733258333332
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:23:10.373608+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 29
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "CBCI-68A6",
+          "bssid": "3E",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "ARLO_VMB_1585693054",
+          "bssid": "08",
+          "rssi": 2,
+          "channel": null
+        },
+        {
+          "ssid": "14dbbe3",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": 99
+        },
+        {
+          "ssid": "Dave cave 2.4",
+          "bssid": "20",
+          "rssi": 23,
+          "channel": 51
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": 99
+        },
+        {
+          "ssid": "DougsWiFi",
+          "bssid": "84",
+          "rssi": 17,
+          "channel": null
+        },
+        {
+          "ssid": "DIRECT-BB-HP DeskJet 2700 series",
+          "bssid": "BC",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "C0",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CBCI-C1A2",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4E",
+          "rssi": 12,
+          "channel": 65
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "DE",
+          "rssi": null,
+          "channel": 48
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "52",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "NETGEAR51-5G",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "D6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "Blue Raven Solar",
+          "bssid": "60",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "62",
+          "rssi": null,
+          "channel": 26
+        },
+        {
+          "ssid": "RTD-2.4_2GEXT",
+          "bssid": "B0",
+          "rssi": 39,
+          "channel": 56
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "86",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "ARLO_VMB_0088191400",
+          "bssid": "A4",
+          "rssi": 11,
+          "channel": 62
+        },
+        {
+          "ssid": "Toothless",
+          "bssid": "D8",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "MalwareVault",
+          "bssid": "74",
+          "rssi": null,
+          "channel": 88
+        },
+        {
+          "ssid": "Lunchbox",
+          "bssid": "00",
+          "rssi": 24,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:24:12.218600+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.26299698333334,
+        "lon": -122.43746101666666
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:24:12.218581+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 38
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "14dbbe3",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "Penthouse",
+          "bssid": "C6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Da Womb",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "creampiesquirtsquirt",
+          "bssid": "54",
+          "rssi": 7,
+          "channel": null
+        },
+        {
+          "ssid": "TMOBILE-DD2C",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "B6",
+          "rssi": 98,
+          "channel": 13
+        },
+        {
+          "ssid": "TMOBILE-826D",
+          "bssid": "C0",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "C2",
+          "rssi": 19,
+          "channel": 21
+        },
+        {
+          "ssid": "a194f",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "RB",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "CBCI-C1A2",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "52",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "NETGEAR51-5G",
+          "bssid": "28",
+          "rssi": 80,
+          "channel": 88
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "D6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "CraneNET",
+          "bssid": "A4",
+          "rssi": 98,
+          "channel": 13
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "B6",
+          "rssi": 98,
+          "channel": 13
+        },
+        {
+          "ssid": "dreamsicle",
+          "bssid": "72",
+          "rssi": 13,
+          "channel": 1
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "72",
+          "rssi": 13,
+          "channel": 1
+        },
+        {
+          "ssid": "GediPrime",
+          "bssid": "D6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "72",
+          "rssi": 13,
+          "channel": 1
+        },
+        {
+          "ssid": "xfinitywifi",
+          "bssid": "D6",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": 99
+        },
+        {
+          "ssid": "FHM Staff",
+          "bssid": "40",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "SBG8300Guest-46B9-5G",
+          "bssid": "4A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "MelancholySpleen",
+          "bssid": "2A",
+          "rssi": 94,
+          "channel": 1
+        },
+        {
+          "ssid": "Luxul_XAP1510",
+          "bssid": "A4",
+          "rssi": 13,
+          "channel": null
+        },
+        {
+          "ssid": "ARLO_VMB_1585693054",
+          "bssid": "08",
+          "rssi": 2,
+          "channel": null
+        },
+        {
+          "ssid": "UnionClub2",
+          "bssid": "84",
+          "rssi": 78,
+          "channel": 48
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "8A",
+          "rssi": 78,
+          "channel": 48
+        },
+        {
+          "ssid": "Wu-Tang LAN",
+          "bssid": "3C",
+          "rssi": null,
+          "channel": null
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:25:19.808598+00:00",
+      "mode": "active",
+      "gps": {
+        "lat": 47.263309933333325,
+        "lon": -122.43747913333333
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": true,
+        "scan_timestamp": "2026-05-04T23:25:19.808579+00:00",
+        "scan_backend": "nmcli",
+        "interface": "wlp3s0",
+        "network_count": 38
+      },
+      "wifi_scan": [
+        {
+          "ssid": "Garmin-7856",
+          "bssid": "E0",
+          "rssi": 48,
+          "channel": 24
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "Verizon-M3100-7A8A",
+          "bssid": "18",
+          "rssi": null,
+          "channel": 86
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "62",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "6A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "UnionClub2",
+          "bssid": "84",
+          "rssi": 78,
+          "channel": 48
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "8A",
+          "rssi": 78,
+          "channel": 48
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FA",
+          "rssi": null,
+          "channel": 99
+        },
+        {
+          "ssid": "Wu-Tang LAN_Guest",
+          "bssid": "3C",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "JFinch",
+          "bssid": "1C",
+          "rssi": 93,
+          "channel": null
+        },
+        {
+          "ssid": "403",
+          "bssid": "18",
+          "rssi": 60,
+          "channel": 41
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "1A",
+          "rssi": 60,
+          "channel": 41
+        },
+        {
+          "ssid": "TMOBILE-826D",
+          "bssid": "C0",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "HobbesMyCat",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "82",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "a194f",
+          "bssid": "4C",
+          "rssi": 1,
+          "channel": 43
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "36",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "AE",
+          "rssi": 70,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "FE",
+          "rssi": null,
+          "channel": 48
+        },
+        {
+          "ssid": "The Lex Managment",
+          "bssid": "32",
+          "rssi": 87,
+          "channel": null
+        },
+        {
+          "ssid": "Atlas Networks Open WiFi",
+          "bssid": "2E",
+          "rssi": 87,
+          "channel": null
+        },
+        {
+          "ssid": "14dbbe3",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "It Hurt When iP",
+          "bssid": "C4",
+          "rssi": null,
+          "channel": 16
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "52",
+          "rssi": null,
+          "channel": 30
+        },
+        {
+          "ssid": "TMOBILE-DD2C",
+          "bssid": "18",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "72",
+          "rssi": 13,
+          "channel": 1
+        },
+        {
+          "ssid": "CenturyLink4983",
+          "bssid": "D4",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Dave cave 2.4",
+          "bssid": "20",
+          "rssi": 23,
+          "channel": 51
+        },
+        {
+          "ssid": "CenturyLink5837",
+          "bssid": "D8",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "<hidden>",
+          "bssid": "7A",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "ARLO_VMB_1585693054",
+          "bssid": "08",
+          "rssi": 2,
+          "channel": null
+        },
+        {
+          "ssid": "lewifi",
+          "bssid": "94",
+          "rssi": 98,
+          "channel": null
+        },
+        {
+          "ssid": "2400",
+          "bssid": "C0",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "TMOBILE-38D1",
+          "bssid": "94",
+          "rssi": null,
+          "channel": 96
+        },
+        {
+          "ssid": "TP-LINK_54CB",
+          "bssid": "98",
+          "rssi": null,
+          "channel": null
+        },
+        {
+          "ssid": "Foss Harbor Marina",
+          "bssid": "B6",
+          "rssi": 19,
+          "channel": 21
+        }
+      ],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:26:20.063965+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.26347238333333,
+        "lon": -122.43740811666666
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "event_id": "evt-mode-232620",
+      "node_id": "marlin-01",
+      "type": "mode_changed",
+      "severity": "info",
+      "details": {
+        "previous_mode": "active",
+        "current_mode": "passive",
+        "gps": {
+          "lat": 47.26347238333333,
+          "lon": -122.43740811666666
+        }
+      },
+      "timestamp": "2026-05-04T23:26:20.065229+00:00",
+      "message_type": "event"
+    },
+    {
+      "event_id": "evt-left-232620",
+      "node_id": "marlin-01",
+      "type": "left_geofence",
+      "severity": "info",
+      "details": {
+        "gps": {
+          "lat": 47.26347238333333,
+          "lon": -122.43740811666666
+        }
+      },
+      "timestamp": "2026-05-04T23:26:20.065635+00:00",
+      "message_type": "event"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:27:24.681854+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.263930349999995,
+        "lon": -122.43736216666666
+      },
+      "battery": {
+        "percent": 56
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:28:25.078201+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.26451433333333,
+        "lon": -122.43774794999999
+      },
+      "battery": {
+        "percent": 55
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:29:53.179665+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.26528198333334,
+        "lon": -122.43817648333334
+      },
+      "battery": {
+        "percent": 54
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:30:53.683259+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.26592508333333,
+        "lon": -122.43836183333333
+      },
+      "battery": {
+        "percent": 54
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:31:53.783533+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.266472783333334,
+        "lon": -122.43879341666667
+      },
+      "battery": {
+        "percent": 54
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:32:53.889841+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.26732151666667,
+        "lon": -122.43935035000001
+      },
+      "battery": {
+        "percent": 54
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:33:54.087251+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.26932985,
+        "lon": -122.44094028333332
+      },
+      "battery": {
+        "percent": 54
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:34:54.189524+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.272741266666664,
+        "lon": -122.4437646
+      },
+      "battery": {
+        "percent": 54
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:35:54.494053+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.27619886666666,
+        "lon": -122.44678551666667
+      },
+      "battery": {
+        "percent": 53
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:36:54.585168+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.28093503333333,
+        "lon": -122.45048014999999
+      },
+      "battery": {
+        "percent": 53
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:37:59.692627+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.2865742,
+        "lon": -122.45325138333334
+      },
+      "battery": {
+        "percent": 53
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:39:09.796564+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.292818133333334,
+        "lon": -122.45490873333334
+      },
+      "battery": {
+        "percent": 52
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:40:24.893853+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.29951023333333,
+        "lon": -122.4570465
+      },
+      "battery": {
+        "percent": 52
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:41:44.993005+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.306615616666676,
+        "lon": -122.45980103333335
+      },
+      "battery": {
+        "percent": 52
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:42:45.193740+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3109346,
+        "lon": -122.461738
+      },
+      "battery": {
+        "percent": 52
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:43:45.492659+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.31581630000001,
+        "lon": -122.46386821666668
+      },
+      "battery": {
+        "percent": 51
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:44:45.899494+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.32066901666667,
+        "lon": -122.46641255000002
+      },
+      "battery": {
+        "percent": 50
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:48:01.596353+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.33681563333333,
+        "lon": -122.47324476666667
+      },
+      "battery": {
+        "percent": 50
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:45:46.180673+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.32554948333333,
+        "lon": -122.46886851666667
+      },
+      "battery": {
+        "percent": 50
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:46:51.510710+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.330992550000005,
+        "lon": -122.47123316666666
+      },
+      "battery": {
+        "percent": 50
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:49:14.802615+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3428921,
+        "lon": -122.47488870000001
+      },
+      "battery": {
+        "percent": 50
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:50:14.897912+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.34537118333333,
+        "lon": -122.47631521666666
+      },
+      "battery": {
+        "percent": 50
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:51:15.103612+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.34658746666667,
+        "lon": -122.47711691666667
+      },
+      "battery": {
+        "percent": 49
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:52:20.202134+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.34710455,
+        "lon": -122.4795228
+      },
+      "battery": {
+        "percent": 49
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:53:30.576908+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.349986066666666,
+        "lon": -122.47975091666667
+      },
+      "battery": {
+        "percent": 49
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:54:45.706173+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.353555166666666,
+        "lon": -122.48013483333334
+      },
+      "battery": {
+        "percent": 48
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:56:05.807533+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.35750743333333,
+        "lon": -122.47945865000001
+      },
+      "battery": {
+        "percent": 48
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:57:06.508259+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3610838,
+        "lon": -122.47754763333333
+      },
+      "battery": {
+        "percent": 48
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:01:36.915698+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.375579866666676,
+        "lon": -122.46669006666667
+      },
+      "battery": {
+        "percent": 47
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:02:57.012066+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.378856666666664,
+        "lon": -122.46233228333334
+      },
+      "battery": {
+        "percent": 46
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:04:22.545975+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3807014,
+        "lon": -122.45654643333334
+      },
+      "battery": {
+        "percent": 46
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:05:52.695913+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3820862,
+        "lon": -122.44960118333331
+      },
+      "battery": {
+        "percent": 45
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:07:28.077457+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.382791116666674,
+        "lon": -122.44615638333335
+      },
+      "battery": {
+        "percent": 45
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:09:08.468188+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38304953333333,
+        "lon": -122.44521721666666
+      },
+      "battery": {
+        "percent": 45
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:10:53.558625+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383186300000006,
+        "lon": -122.44462614999999
+      },
+      "battery": {
+        "percent": 44
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:12:43.658736+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383310316666666,
+        "lon": -122.44436708333333
+      },
+      "battery": {
+        "percent": 44
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:14:39.111066+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383312700000005,
+        "lon": -122.44436291666668
+      },
+      "battery": {
+        "percent": 42
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:16:39.223237+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38331461666667,
+        "lon": -122.44435971666665
+      },
+      "battery": {
+        "percent": 42
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:18:44.401423+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383316799999996,
+        "lon": -122.44435800000001
+      },
+      "battery": {
+        "percent": 42
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:58:06.604954+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.36456065000001,
+        "lon": -122.4757798
+      },
+      "battery": {
+        "percent": 47
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-04T23:59:11.710839+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.36834033333333,
+        "lon": -122.47373741666667
+      },
+      "battery": {
+        "percent": 47
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:00:21.811892+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.37209965,
+        "lon": -122.47079055
+      },
+      "battery": {
+        "percent": 47
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:20:01.997776+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3833179,
+        "lon": -122.44435583333333
+      },
+      "battery": {
+        "percent": 41
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:21:02.195288+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38331886666666,
+        "lon": -122.44435431666668
+      },
+      "battery": {
+        "percent": 41
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:22:02.293630+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38331985,
+        "lon": -122.44435386666667
+      },
+      "battery": {
+        "percent": 41
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:23:07.392769+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383320516666664,
+        "lon": -122.44435273333332
+      },
+      "battery": {
+        "percent": 41
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:24:17.487909+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383321466666665,
+        "lon": -122.44435196666667
+      },
+      "battery": {
+        "percent": 41
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:25:32.584807+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383322433333326,
+        "lon": -122.44435098333334
+      },
+      "battery": {
+        "percent": 40
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:26:53.088330+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3833233,
+        "lon": -122.44434988333333
+      },
+      "battery": {
+        "percent": 40
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:28:18.184524+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332295,
+        "lon": -122.44434729999999
+      },
+      "battery": {
+        "percent": 39
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:29:48.281246+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383322766666666,
+        "lon": -122.44434483333335
+      },
+      "battery": {
+        "percent": 39
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:31:23.375028+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332271666666,
+        "lon": -122.44434246666667
+      },
+      "battery": {
+        "percent": 38
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:33:03.477101+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332401666666,
+        "lon": -122.4443395
+      },
+      "battery": {
+        "percent": 38
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:34:48.571101+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332518333333,
+        "lon": -122.44433759999998
+      },
+      "battery": {
+        "percent": 38
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:36:39.015079+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332619999999,
+        "lon": -122.44433611666666
+      },
+      "battery": {
+        "percent": 37
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:38:34.170866+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332715,
+        "lon": -122.44433480000001
+      },
+      "battery": {
+        "percent": 37
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:40:34.431325+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332788333334,
+        "lon": -122.44433320000002
+      },
+      "battery": {
+        "percent": 36
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:42:39.568259+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383328633333335,
+        "lon": -122.44433204999999
+      },
+      "battery": {
+        "percent": 35
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:44:50.042724+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332898333333,
+        "lon": -122.44433056666666
+      },
+      "battery": {
+        "percent": 35
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:47:05.203956+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332923333334,
+        "lon": -122.44432908333334
+      },
+      "battery": {
+        "percent": 34
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:48:07.208854+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383329283333325,
+        "lon": -122.44432838333333
+      },
+      "battery": {
+        "percent": 34
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:51:22.619607+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332936666667,
+        "lon": -122.44432688333333
+      },
+      "battery": {
+        "percent": 33
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:52:38.048618+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333303333334,
+        "lon": -122.44431761666668
+      },
+      "battery": {
+        "percent": 33
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:53:58.125788+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332761666667,
+        "lon": -122.44429768333333
+      },
+      "battery": {
+        "percent": 33
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:55:23.227040+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383327466666664,
+        "lon": -122.44429720000001
+      },
+      "battery": {
+        "percent": 32
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:56:53.327051+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3833319,
+        "lon": -122.44429683333334
+      },
+      "battery": {
+        "percent": 32
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:58:28.425406+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383330783333335,
+        "lon": -122.44429653333333
+      },
+      "battery": {
+        "percent": 31
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:00:08.526223+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383330400000006,
+        "lon": -122.4442963
+      },
+      "battery": {
+        "percent": 31
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:01:53.614427+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3833302,
+        "lon": -122.44429658333333
+      },
+      "battery": {
+        "percent": 30
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:03:44.054046+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333041666667,
+        "lon": -122.44429698333333
+      },
+      "battery": {
+        "percent": 30
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:05:39.211767+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333084999999,
+        "lon": -122.44429745000001
+      },
+      "battery": {
+        "percent": 29
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:07:39.307981+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333118333333,
+        "lon": -122.44429713333332
+      },
+      "battery": {
+        "percent": 29
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:09:44.506669+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333133333334,
+        "lon": -122.444297
+      },
+      "battery": {
+        "percent": 28
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:11:55.057134+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383332083333336,
+        "lon": -122.44429731666666
+      },
+      "battery": {
+        "percent": 28
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:49:07.409907+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332946666666,
+        "lon": -122.44432794999999
+      },
+      "battery": {
+        "percent": 34
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T00:50:12.516981+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38332950000001,
+        "lon": -122.44432739999999
+      },
+      "battery": {
+        "percent": 34
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:13:05.502662+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383332733333326,
+        "lon": -122.44429776666666
+      },
+      "battery": {
+        "percent": 27
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:14:20.598082+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383333416666666,
+        "lon": -122.44429815
+      },
+      "battery": {
+        "percent": 27
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:15:41.055951+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383333883333336,
+        "lon": -122.44429826666668
+      },
+      "battery": {
+        "percent": 26
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:17:06.199722+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333445,
+        "lon": -122.44429856666666
+      },
+      "battery": {
+        "percent": 26
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:18:36.397555+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38333451666667,
+        "lon": -122.44429861666667
+      },
+      "battery": {
+        "percent": 26
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:20:11.494981+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383334733333335,
+        "lon": -122.44429873333333
+      },
+      "battery": {
+        "percent": 26
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:21:51.594014+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38335973333333,
+        "lon": -122.44431351666665
+      },
+      "battery": {
+        "percent": 24
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:23:36.693101+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38336915,
+        "lon": -122.44433114999998
+      },
+      "battery": {
+        "percent": 24
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:25:27.088704+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.3833679,
+        "lon": -122.44433068333335
+      },
+      "battery": {
+        "percent": 24
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:27:22.197144+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38336793333333,
+        "lon": -122.44433245
+      },
+      "battery": {
+        "percent": 23
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:29:22.393939+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38347525000001,
+        "lon": -122.44414968333334
+      },
+      "battery": {
+        "percent": 23
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:30:24.990532+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383848366666676,
+        "lon": -122.44396203333332
+      },
+      "battery": {
+        "percent": 23
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:31:25.092135+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.383571749999994,
+        "lon": -122.44487691666667
+      },
+      "battery": {
+        "percent": 23
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:32:25.296858+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38319811666667,
+        "lon": -122.4463237
+      },
+      "battery": {
+        "percent": 22
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:33:30.397494+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38208761666667,
+        "lon": -122.44866076666668
+      },
+      "battery": {
+        "percent": 22
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:34:40.510324+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38215728333333,
+        "lon": -122.45330105
+      },
+      "battery": {
+        "percent": 22
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:35:40.693201+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38114148333334,
+        "lon": -122.45746116666666
+      },
+      "battery": {
+        "percent": 21
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:36:41.080456+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.38046658333333,
+        "lon": -122.45974986666667
+      },
+      "battery": {
+        "percent": 21
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:37:41.191439+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.37949175000001,
+        "lon": -122.46085878333334
+      },
+      "battery": {
+        "percent": 21
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:38:41.389699+00:00",
+      "mode": "passive",
+      "gps": {
+        "lat": 47.37900521666667,
+        "lon": -122.46374055
+      },
+      "battery": {
+        "percent": 21
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:39:42.020370+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.376730650000006,
+        "lon": -122.4672705
+      },
+      "battery": {
+        "percent": 20
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "event_id": "evt-mode-013942",
+      "node_id": "marlin-01",
+      "type": "mode_changed",
+      "severity": "info",
+      "details": {
+        "previous_mode": "passive",
+        "current_mode": "low_power",
+        "gps": {
+          "lat": 47.376730650000006,
+          "lon": -122.4672705
+        }
+      },
+      "timestamp": "2026-05-05T01:39:42.021475+00:00",
+      "message_type": "event"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:40:42.290222+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.3739676,
+        "lon": -122.47023488333335
+      },
+      "battery": {
+        "percent": 19
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:41:42.385275+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.37091413333333,
+        "lon": -122.47231356666667
+      },
+      "battery": {
+        "percent": 19
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:42:42.484211+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.36848773333333,
+        "lon": -122.47348126666665
+      },
+      "battery": {
+        "percent": 19
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:43:42.584325+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.36742155,
+        "lon": -122.47414765
+      },
+      "battery": {
+        "percent": 19
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:44:43.073072+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.3632718,
+        "lon": -122.47571945
+      },
+      "battery": {
+        "percent": 19
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:45:43.184198+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.35842001666666,
+        "lon": -122.47844665
+      },
+      "battery": {
+        "percent": 19
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:46:43.285570+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.353402949999996,
+        "lon": -122.48031735
+      },
+      "battery": {
+        "percent": 18
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:47:48.380850+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.34773051666666,
+        "lon": -122.47971873333333
+      },
+      "battery": {
+        "percent": 18
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:48:58.481558+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.34204185,
+        "lon": -122.47604245
+      },
+      "battery": {
+        "percent": 18
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:50:13.582762+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.33616308333333,
+        "lon": -122.47133594999998
+      },
+      "battery": {
+        "percent": 16
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:51:33.677142+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.32912736666667,
+        "lon": -122.47043341666668
+      },
+      "battery": {
+        "percent": 16
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:52:58.996851+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.321729383333334,
+        "lon": -122.46784421666668
+      },
+      "battery": {
+        "percent": 16
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:54:29.077187+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.31549635,
+        "lon": -122.47346241666668
+      },
+      "battery": {
+        "percent": 16
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:56:04.184010+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.31202808333334,
+        "lon": -122.48420229999998
+      },
+      "battery": {
+        "percent": 16
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:57:44.302569+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.30816398333333,
+        "lon": -122.49570206666667
+      },
+      "battery": {
+        "percent": 15
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T01:59:29.477004+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.30422713333334,
+        "lon": -122.49901986666667
+      },
+      "battery": {
+        "percent": 15
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:01:19.579536+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.30072266666666,
+        "lon": -122.49533226666667
+      },
+      "battery": {
+        "percent": 14
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:02:20.379551+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.2981007,
+        "lon": -122.49334075
+      },
+      "battery": {
+        "percent": 14
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:03:25.477419+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.29452933333334,
+        "lon": -122.48828389999998
+      },
+      "battery": {
+        "percent": 14
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:04:35.577862+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.28990678333333,
+        "lon": -122.48215454999999
+      },
+      "battery": {
+        "percent": 13
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:05:36.474039+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.286150316666664,
+        "lon": -122.47634066666666
+      },
+      "battery": {
+        "percent": 13
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:06:36.578177+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.283525350000005,
+        "lon": -122.46948746666666
+      },
+      "battery": {
+        "percent": 13
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:07:36.676520+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.280518283333336,
+        "lon": -122.4631404
+      },
+      "battery": {
+        "percent": 13
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:08:42.003569+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.27677311666666,
+        "lon": -122.45660623333333
+      },
+      "battery": {
+        "percent": 11
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:09:52.076370+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.27293413333334,
+        "lon": -122.44945695
+      },
+      "battery": {
+        "percent": 11
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:10:53.388457+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.271157666666674,
+        "lon": -122.44503510000001
+      },
+      "battery": {
+        "percent": 11
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:11:53.986759+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.26987198333333,
+        "lon": -122.4413277
+      },
+      "battery": {
+        "percent": 10
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:12:54.287842+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.26806628333334,
+        "lon": -122.43999368333334
+      },
+      "battery": {
+        "percent": 10
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:13:54.481600+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.2663154,
+        "lon": -122.43871895
+      },
+      "battery": {
+        "percent": 10
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:14:54.586472+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.26545373333333,
+        "lon": -122.43804200000001
+      },
+      "battery": {
+        "percent": 10
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:15:59.679454+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.26484341666666,
+        "lon": -122.43847186666666
+      },
+      "battery": {
+        "percent": 9
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:17:00.091162+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.26322171666667,
+        "lon": -122.43858048333335
+      },
+      "battery": {
+        "percent": 6
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    },
+    {
+      "node_id": "marlin-01",
+      "timestamp": "2026-05-05T02:18:00.284214+00:00",
+      "mode": "low_power",
+      "gps": {
+        "lat": 47.262058533333324,
+        "lon": -122.43818876666667
+      },
+      "battery": {
+        "percent": 6
+      },
+      "environment": {
+        "temperature_c": 21.4,
+        "humidity_pct": 68.2
+      },
+      "wifi_scan_meta": {
+        "scan_performed": false
+      },
+      "wifi_scan": [],
+      "message_type": "snapshot"
+    }
+  ],
+  "reasoning_runs": [
+    {
+      "summary": "Node marlin-01 entered a geofence while active with healthy battery (58%). No recent local handling is recorded; initiating a Wi-Fi scan is appropriate on geofence entry.",
+      "recommended_actions": [
+        {
+          "action": "run_wifi_scan"
+        }
+      ],
+      "mission_config_patch": null,
+      "confidence": 0.93,
+      "backend": "openai",
+      "model": "gpt-5.3-codex",
+      "response_id": "resp_008c5f35177f72c50069f9295bae5081a3a18f9471c45f70ac",
+      "timestamp": "2026-05-04T23:18:54.654249+00:00",
+      "node_id": "marlin-01",
+      "trigger_type": "entered_geofence"
+    },
+    {
+      "summary": "marlin-01 reported leaving the geofence while in passive mode at 56% battery. No recent events/commands indicate local handling, so a state verification snapshot is the safest immediate step.",
+      "recommended_actions": [
+        {
+          "action": "request_snapshot",
+          "params": {}
+        }
+      ],
+      "mission_config_patch": null,
+      "confidence": 0.79,
+      "backend": "openai",
+      "model": "gpt-5.3-codex",
+      "response_id": "resp_0ddc3c1f94293a640069f92b1c654881909b2534747d937409",
+      "timestamp": "2026-05-04T23:26:24.361260+00:00",
+      "node_id": "marlin-01",
+      "trigger_type": "left_geofence"
+    }
+  ],
+  "commands": [
+    {
+      "command_id": "manual-001",
+      "node_id": "marlin-01",
+      "type": "run_wifi_scan",
+      "params": {
+        "duration_sec": 60,
+        "channels": [
+          1,
+          6,
+          11
+        ]
+      },
+      "issued_at": "2026-05-05T02:19:21.939802+00:00"
+    }
+  ],
+  "chat_history": [
+    {
+      "role": "user",
+      "text": "do some scans even though power is low"
+    },
+    {
+      "role": "anchor",
+      "text": "For version 1, I would keep Wi-Fi behavior mission-driven: passive while drifting, active scanning after geofence entry, and targeted monitoring through structured commands."
+    }
+  ],
+  "system_mode": "anchor_managed",
+  "scenario_runs": [],
+  "active_runs": {}
+}
